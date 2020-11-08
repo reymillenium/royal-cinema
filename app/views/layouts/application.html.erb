@@ -33,7 +33,7 @@
         <div class="menu">
           <a href="" id="menuToggle"> <span class="navClosed"></span> </a>
           <nav>
-            <a href="index.html" class="active">Home</a>
+            <a href="#home" class="active scroll">Home</a>
             <a href="#about" class="scroll">About Me</a>
             <a href="#skills" class="scroll">My Skills</a>
             <a href="#services" class="scroll">My Services</a>
@@ -578,16 +578,19 @@
           easingType: 'linear'
           };
         */
-        $().UItoTop({easingType: 'easeOutQuart'});
+        jQuery(document).UItoTop({easingType: 'easeOutQuart'});
     });
 </script>
-<a href="#" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
+<!-- Al inicio funcionaba, luego ya no más -->
+<!--<a href="#" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>-->
+<!-- Temporal Fix. It works -->
+<a href="#home" id="toTop" class="scroll" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
 <!-- //for-bottom-to-top smooth scrolling -->
 <!-- menu-script -->
 <script>
     (function ($) {
         // Menu Functions
-        $(document).ready(function () {
+        jQuery(document).ready(function () {
             $('#menuToggle').click(function (e) {
                 var $parent = $(this).parent('.menu');
                 $parent.toggleClass("open");
@@ -609,9 +612,9 @@
 <%#= javascript_pack_tag 'responsiveslides' %>
 <script>
     // You can also use "$(window).load(function() {"
-    $(function () {
+    jQuery(function () {
         // Slideshow 4
-        $("#slider").responsiveSlides({
+        jQuery("#slider").responsiveSlides({
             auto: true,
             pager: false,
             nav: false,
@@ -632,9 +635,9 @@
 <!--<script src="app/javascript/packs/skill.bars.jquery.js"></script>-->
 <%#= javascript_pack_tag 'skill.bars.jquery' %>
 <script>
-    $(document).ready(function () {
+    jQuery(document).ready(function () {
 
-        $('.skillbar').skillBars({
+        jQuery('.skillbar').skillBars({
             from: 0,
             speed: 4000,
             interval: 100,
@@ -647,8 +650,8 @@
 <!-- timeline -->
 <!--<script type="text/javascript" src="app/javascript/packs/jquery.cntl.js"></script>-->
 <script type="text/javascript">
-    $(document).ready(function (e) {
-        $('.cntl').cntl({
+    jQuery(document).ready(function (e) {
+        jQuery('.cntl').cntl({
             revealbefore: 300,
             anim_class: 'cntl-animate',
             onreveal: function (e) {
@@ -660,25 +663,25 @@
 <!-- //timeline -->
 <!-- accordion -->
 <script>
-    $(document).ready(function () {
+    jQuery(document).ready(function () {
         function close_accordion_section() {
-            $('.accordion .accordion-section-title').removeClass('active');
-            $('.accordion .accordion-section-content').slideUp(300).removeClass('open');
+            jQuery('.accordion .accordion-section-title').removeClass('active');
+            jQuery('.accordion .accordion-section-content').slideUp(300).removeClass('open');
         }
 
-        $('.accordion-section-title').click(function (e) {
+        jQuery('.accordion-section-title').click(function (e) {
             // Grab current anchor value
             var currentAttrValue = jQuery(this).attr('href');
 
-            if ($(e.target).is('.active')) {
+            if (jQuery(e.target).is('.active')) {
                 close_accordion_section();
             } else {
                 close_accordion_section();
 
                 // Add active class to section title
-                $(this).addClass('active');
+                jQuery(this).addClass('active');
                 // Open up the hidden content panel
-                $('.accordion ' + currentAttrValue).slideDown(300).addClass('open');
+                jQuery('.accordion ' + currentAttrValue).slideDown(300).addClass('open');
             }
 
             e.preventDefault();
@@ -694,8 +697,8 @@
 <!--<script src="app/javascript/packs/jquery.cm-overlay.js"></script>-->
 <%#= javascript_pack_tag 'jquery.cm-overlay' %>
 <script>
-    $(document).ready(function () {
-        $('.cm-overlay').cmOverlay();
+    jQuery(document).ready(function () {
+        jQuery('.cm-overlay').cmOverlay();
     });
 </script>
 <!-- //for projects -->

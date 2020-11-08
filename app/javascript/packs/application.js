@@ -3,7 +3,6 @@
 // a relevant structure within app/javascript and only use these pack files to reference
 // that code so it'll be compiled.
 
-
 // Default:
 require("@rails/ujs").start()
 require("turbolinks").start()
@@ -24,14 +23,14 @@ import "@fortawesome/fontawesome-free/js/all";
 
 import './easing'
 import './move-top'
-// import './responsiveslides'
+import './responsiveslides'
 // import './SmoothScroll.min'
 import './SmoothScroll'
 
 // Custom js files:
 // require("easing")
 // require("move-top")
-require("responsiveslides")
+// require("responsiveslides")
 // require("SmoothScroll.min")
 
 import './jquery.cm-overlay'
