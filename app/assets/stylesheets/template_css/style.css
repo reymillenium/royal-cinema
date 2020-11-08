@@ -33,7 +33,7 @@ body a:hover{
 }
 /*-- banner --*/
 .banner {
-    background:url(../images/1.jpg)no-repeat center 0px;
+    background:url(1.jpg)no-repeat center 0px;
     background-size:cover;
 	position: relative;	 
 } 
@@ -584,7 +584,7 @@ h3.w3l-title:after {
 /*-- //about --*/
 /*-- skills --*/
 .stats { 
-	background: url(../images/2.jpg)no-repeat 0px 0px fixed;
+	background: url(2.jpg)no-repeat 0px 0px fixed;
     background-size: cover;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -746,7 +746,7 @@ h3.w3l-title:after {
 /*-- //services --*/
 /*-- interestes --*/
 .intra-w3l{
-	background: url(../images/3.jpg)no-repeat 0px 0px fixed;
+	background: url(3.jpg)no-repeat 0px 0px fixed;
     background-size: cover;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -1236,7 +1236,7 @@ a.accordion-section-title span {
 /*-- //contact --*/
 /*-- introduce --*/
 .confi-w3l{
-	background: url(../images/4.jpg)no-repeat 0px 0px fixed;
+	background: url(4.jpg)no-repeat 0px 0px fixed;
     background-size: cover;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -1321,7 +1321,7 @@ a.accordion-section-title span {
     height: 64px;
 	border: none;
 	text-indent: 100%;
-	background: url("../images/up.png") no-repeat 0px 0px;
+	background: url("up.png") no-repeat 0px 0px;
 }
 #toTopHover {
     width: 64px;

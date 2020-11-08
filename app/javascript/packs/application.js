@@ -22,6 +22,38 @@ document.addEventListener("turbolinks:load", () => {
 // FontAwesome scripting:
 import "@fortawesome/fontawesome-free/js/all";
 
+import './easing'
+import './move-top'
+// import './responsiveslides'
+// import './SmoothScroll.min'
+import './SmoothScroll'
+
+// Custom js files:
+// require("easing")
+// require("move-top")
+require("responsiveslides")
+// require("SmoothScroll.min")
+
+import './jquery.cm-overlay'
+import './jquery.cntl'
+// import './jquery.mobile.custom.min'
+import './jquery.mobile-1.5.0-rc1.min'
+import './jquery.tools.min'
+import './skill.bars.jquery'
+
+
+
+
+// require("jquery.cm-overlay")
+// require("jquery.cntl")
+// require("jquery.mobile.custom.min")
+// require("jquery.tools.min")
+// require("skill.bars.jquery")
+
+
+
+
+
 // Uncomment to copy all static images under ../images to the output folder and reference
 // them with the image_pack_tag helper in views (e.g <%= image_pack_tag 'rails.png' %>)
 // or the `imagePath` JavaScript helper below.
