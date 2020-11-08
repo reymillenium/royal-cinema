@@ -11,6 +11,7 @@ require("channels")
 
 // Boostrap 4:
 import 'bootstrap'
+// import './bootstrap'
 
 // Enables the tooltips & popovers:
 document.addEventListener("turbolinks:load", () => {
@@ -19,7 +20,7 @@ document.addEventListener("turbolinks:load", () => {
 });
 
 // FontAwesome scripting:
-import "@fortawesome/fontawesome-free/js/all";
+// import "@fortawesome/fontawesome-free/js/all";
 
 import './easing'
 import './move-top'
@@ -35,10 +36,10 @@ import './SmoothScroll'
 
 import './jquery.cm-overlay'
 import './jquery.cntl'
-// import './jquery.mobile.custom.min'
 import './jquery.mobile-1.5.0-rc1.min'
 import './jquery.tools.min'
 import './skill.bars.jquery'
+// import './jquery.mobile.custom.min'
 
 
 

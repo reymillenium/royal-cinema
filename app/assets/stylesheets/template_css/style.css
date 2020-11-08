@@ -239,7 +239,7 @@ a.wthree-more:hover > span:nth-child(10) {
 	transition-delay: 0.45s;
 }
 .footer-agiletop {
-    background: url(../images/m1.jpg) no-repeat center;
+    /*background: url(../images/m1.jpg) no-repeat center;*/
     background-size: cover;
     -webkit-background-size: cover;
     -moz-background-size: cover;
