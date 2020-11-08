@@ -1,5 +1,10 @@
 // Boostrap 4:
-@import 'bootstrap/scss/bootstrap';
+//@import 'bootstrap/scss/bootstrap';
+@import 'template_css/bootstrap';
+
+// Imports all the template styling:
+@import "template_css/cm-overlay";
+@import "template_css/style";
 
 // FontAwesome styling:
 //@import '@fortawesome/fontawesome-free/scss/fontawesome';
@@ -16,6 +21,4 @@ $fa-font-path: '@fortawesome/fontawesome-free/webfonts';
 @import '@fortawesome/fontawesome-free/scss/v4-shims';
 
 
-// Imports all the template styling:
-@import "template_css/cm-overlay";
-@import "template_css/style";
+
