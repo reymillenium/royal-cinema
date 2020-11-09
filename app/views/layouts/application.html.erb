@@ -28,7 +28,7 @@
     <div class="header">
       <div class="container">
         <div class="logo">
-          <h1><a href="index.html">Classic CV</a></h1>
+          <h1><a href="index.html">Meet the Developer</a></h1>
         </div>
         <div class="menu">
           <a href="" id="menuToggle"> <span class="navClosed"></span> </a>
@@ -97,7 +97,7 @@
         </div>
         <div class="w3ls-agile-left-info">
           <h4>Experience</h4>
-          <p><%= descriptive_diff(Time.now, "2019-01-02".to_time) %></p>
+          <p><%= descriptive_diff(Time.now, "2019-01-02".to_time) %> (in the United States)</p>
         </div>
         <div class="w3ls-agile-left-info">
           <h4>Address</h4>
@@ -252,50 +252,57 @@
       <div class="cntl"><span class="cntl-bar cntl-center"> <span class="cntl-bar-fill"></span> </span>
         <div class="cntl-states">
           <div class="cntl-state">
+
             <div class="cntl-content">
-              <h4>2017 Present</h4>
-              <p>SENIOR PROJECT MANAGER</p>
+              <h4>05/2020 - Present</h4>
+              <p>Ruby on Rails Developer</p>
             </div>
             <div class="cntl-image">
               <img src=<%= "#{asset_path 'w1.jpg'}" %> class="img-responsive" alt=" ">
               <div class="w3ls_cntl_image_pos">
-                <p>Sed do eiusmod tempor incididunt et dolore magna aliqua.</p>
+                <p>Cuseum, Inc. Boston, MA (remote)</p>
               </div>
             </div>
             <div class="cntl-icon cntl-center">01</div>
           </div>
+
           <div class="cntl-state">
             <div class="cntl-content">
-              <h4>2013 to 2016</h4>
-              <p>FRONT END DEVELOPER</p>
+              <h4>01/2019 - 05/2020</h4>
+              <p>Ruby on Rails Developer</p>
             </div>
             <div class="cntl-image w3_cntl_image">
               <img src=<%= "#{asset_path 'w2.jpg'}" %> class="img-responsive" alt=" ">
+              <div class="w3ls_cntl_image_pos">
+                <p>Kipu Health, LLC. Coral Gables, FL</p>
+              </div>
             </div>
             <div class="cntl-icon cntl-center">02</div>
           </div>
+
           <div class="cntl-state">
             <div class="cntl-content">
-              <h4>2010 to 2013</h4>
-              <p>Microsoft & IT Solutions</p>
+              <h4>12/2015 - 01/2019</h4>
+              <p>Freelance Web Developer (Apprenticeship)</p>
             </div>
-            <div class="cntl-image">
+            <div class="cntl-image w3_cntl_image">
               <img src=<%= "#{asset_path 'w3.jpg'}" %> class="img-responsive" alt=" ">
               <div class="w3ls_cntl_image_pos">
-                <p>Sed do eiusmod tempor incididunt et dolore magna aliqua.</p>
+                <p>SleekWare Project. Miami, FL</p>
               </div>
             </div>
             <div class="cntl-icon cntl-center">03</div>
           </div>
+
           <div class="cntl-state">
             <div class="cntl-content">
-              <h4>2007 to 2010</h4>
-              <p>WebStyle Technologies</p>
+              <h4>10/2007 - 08/2015</h4>
+              <p>Software Developer</p>
             </div>
-            <div class="cntl-image">
+            <div class="cntl-image w3_cntl_image">
               <img src=<%= "#{asset_path 'w4.jpg'}" %> class="img-responsive" alt=" ">
               <div class="w3ls_cntl_image_pos">
-                <p>Sed do eiusmod tempor incididunt et dolore magna aliqua.</p>
+                <p>CENAPET. Havana, Cuba</p>
               </div>
             </div>
             <div class="cntl-icon cntl-center">04</div>
@@ -314,29 +321,30 @@
       <div class="accordion">
         <div class="accordion-section">
           <h5><a class="accordion-section-title" href="#accordion-1">
-            <span>2005 - 2007</span>Oxford University
+            <span>2015 - <%= Time.now.year.to_s %></span>Udemy.com
             <i class="glyphicon glyphicon-chevron-down"></i>
           </a></h5>
           <div id="accordion-1" class="accordion-section-content">
-            <h6>Best Seminars</h6>
+            <h6>Training Courses OnLine</h6>
             <ul>
-              <li><span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span><a href="#">Phasellus molestie
-                eros at convallis condimentum</a></li>
-              <li><span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span><a href="#">Fusce dapibus orci
-                sapien, ut facilisis turpis blandit nec</a></li>
-              <li><span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span><a href="#">Donec cursus nibh
-                quis egestas dapibus</a></li>
+              <li>
+                <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                <a href="#">React.js training course</a>
+              </li>
+              <li>
+                <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                <a href="#">Swift 5 with XCode</a>
+              </li>
             </ul>
           </div>
         </div>
         <div class="accordion-section">
           <h5><a class="accordion-section-title" href="#accordion-2">
-            <span>2000 - 2005</span> Down Street College
+            <span>2002 - 2007</span> Higher Polytechnic Institute “J. A. Echeverria” (CUJAE)
             <i class="glyphicon glyphicon-chevron-down"></i>
           </a></h5>
           <div id="accordion-2" class="accordion-section-content">
-
-            <h6>Projects & Awards</h6>
+            <h6>B. S. Computer Science</h6>
             <ul>
               <li><span class="glyphicon glyphicon-star" aria-hidden="true"></span><a href="#">Quisque rhoncus at ante
                 nec malesuada</a></li>
@@ -349,11 +357,11 @@
         </div>
         <div class="accordion-section">
           <h5><a class="accordion-section-title" href="#accordion-3">
-            <span>1990 - 2000</span> Fedrick School
+            <span>1995 - 1998</span> Vocational High School Institute of Exact Sciences "V. I. Lenin"
             <i class="glyphicon glyphicon-chevron-down"></i>
           </a></h5>
           <div id="accordion-3" class="accordion-section-content">
-            <h6>Competitions</h6>
+            <h6>Emphasis on Physics</h6>
             <ul>
               <li><span class="glyphicon glyphicon-ok" aria-hidden="true"></span><a href="#">voluptatem accusantium</a>
               </li>
@@ -598,17 +606,17 @@
       <div class="col-md-6 address-right">
         <div class="address-info wow fadeInRight animated" data-wow-delay=".5s">
           <h4>Address</h4>
-          <p>123 San Sebastian, Hill Towers 4567 New York City USA.</p>
+          <p>101 Sw 36th CT, Unit 807, Miami, FL 33135, USA.</p>
         </div>
         <div class="address-info address-mdl wow fadeInRight animated" data-wow-delay=".7s">
           <h4>Phone </h4>
-          <p>+222 111 333 4444</p>
-          <p>+222 111 333 5555</p>
+          <p>+1 (786) 458-2150</p>
+          <p>Let me know in advance, via email, the day and time of your call, as well as your calling phone number.</p>
+          <p style="color: #F68415;">* I don't receive unknown phone calls or messages.</p>
         </div>
         <div class="address-info agileits-info wow fadeInRight animated" data-wow-delay=".6s">
           <h4>Mail</h4>
-          <p><a href="mailto:example@mail.com"> mail@example.com</a></p>
-          <p><a href="mailto:example@mail.com"> mail2@example.com</a></p>
+          <p><a href="mailto:reymillenium@gmail.com"> reymillenium@gmail.com</a></p>
         </div>
       </div>
     </div>
@@ -619,16 +627,30 @@
 <div class="footer w3ls">
   <div class="container">
     <div class="w3ls-social-icons-2">
-      <a class="facebook" href="#"><i class="fab fa-facebook"></i></a>
-      <a class="twitter" href="#"><i class="fa fa-twitter"></i></a>
-      <a class="pinterest" href="#"><i class="fa fa-google-plus"></i></a>
-      <a class="linkedin" href="#"><i class="fab fa-linkedin"></i></a>
-      <a class="tumblr" href="#"><i class="fa fa-tumblr"></i></a>
+      <%= link_to "https://www.linkedin.com/in/reymillenium/", class: "linkedin", target: '_linkedin' do %>
+        <i class="fab fa-linkedin"></i>
+      <% end %>
+
+      <%= link_to "https://github.com/reymillenium/", class: "github", target: '_github' do %>
+        <i class="fa fa-github"></i>
+      <% end %>
+
+      <%= link_to "https://stackoverflow.com/users/9616949/reinier-garcia?tab=profile", class: "stack-overflow", target: '_stack' do %>
+        <i class="fab fa-stack-overflow"></i>
+      <% end %>
     </div>
   </div>
 </div>
 <div class="copyrights">
-  <p>&copy; 2017 Classic CV. All rights reserved | Design by <a href="http://w3layouts.com">W3layouts</a></p>
+  <p>&copy; <%= Time.now.year.to_s %>. All rights reserved | Developed by
+
+<!--    <a href="http://w3layouts.com">Reinier Garcia</a></p>-->
+
+
+
+  <%= link_to "https://www.linkedin.com/in/reymillenium/", class: "linkedin", target: '_linkedin' do %>
+    Reinier Garcia
+  <% end %>
 </div>
 <!-- //footer -->
 
