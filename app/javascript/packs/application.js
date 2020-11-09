@@ -20,7 +20,7 @@ document.addEventListener("turbolinks:load", () => {
     $('[data-toggle="popover"]').popover()
 });
 
-// FontAwesome scripting:
+// FontAwesome scripting: (Removing this line fixed problem with not displayed fontawesome)
 // import "@fortawesome/fontawesome-free/js/all";
 
 import './easing'
@@ -35,5 +35,9 @@ import './jquery.cntl'
 import './jquery.tools.min'
 import './skill.bars.jquery'
 import './jquery.mobile.custom.min'
+
+require("./lightbox")
+// require("lightbox")
+import 'lightbox'
 
 
