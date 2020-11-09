@@ -36,8 +36,7 @@ import './jquery.tools.min'
 import './skill.bars.jquery'
 import './jquery.mobile.custom.min'
 
+// This is what made works the lightbox gallery, after copying lightbox.js into packs:
 require("./lightbox")
-// require("lightbox")
-import 'lightbox'
 
 
