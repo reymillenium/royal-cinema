@@ -94,7 +94,10 @@ body a:hover{
     padding-top: 1em;
 }
 .banner-left img {
-    width: 100%;
+    width: 200%;
+    /*margin-bottom: 0 !important;*/
+    margin-top: 60%;
+    bottom: 0;
 }
 /*-- more buttons --*/ 
 .hire-w3lgrids {
@@ -1434,8 +1437,18 @@ a.accordion-section-title span {
 		right: 22%;
 	}
 }
-@media(max-width: 1024px){
 
+@media (max-width: 1024px) {
+    /*.banner-left {*/
+    /*    float: left;*/
+    /*    width: 45%;*/
+    /*}*/
+    .banner-left img {
+        width: 180%;
+        /*margin-bottom: 0 !important;*/
+        margin-top: 60%;
+        bottom: 0;
+    }
 }
 @media(max-width: 991px){
 	#menuToggle {
@@ -1445,6 +1458,14 @@ a.accordion-section-title span {
 		float: left;
 		width: 45%;
 	}
+
+    .banner-left img {
+        width: 200%;
+        /*margin-bottom: 0 !important;*/
+        margin-top: 60%;
+        bottom: 0;
+    }
+
 	.banner-text {
 		float: right;
 		width: 55%;
