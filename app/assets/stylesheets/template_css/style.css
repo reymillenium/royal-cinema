@@ -645,6 +645,8 @@ h3.w3l-title:after {
     font-size: 1em;
     height: 100%;
     color: #fff;
+    /* This fixes that the skills with 100% are shown inside the end of the stat bar */
+    left: 101%;
 }
 /*-- //skills --*/
 /*-- services --*/
