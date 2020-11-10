@@ -56,7 +56,7 @@ body a:hover{
 	text-align: right;
 }
 .banner-text h2 {
-    font-size: 3.2em;
+    font-size: 2.3em;
     line-height: 1.5em;
     color: #fff;
 	padding:.7em 0 1.3em;
@@ -1342,17 +1342,31 @@ a.accordion-section-title span {
 
 /*--responsive--*/
 @media(max-width: 1680px){
+    .banner-text h2 {
+        font-size: 2.3em;
+    }
 
 }
 @media(max-width: 1600px){
+    .banner-text h2 {
+        font-size: 2.3em;
+    }
 
 }
 @media(max-width: 1440px){
-	#menuToggle { 
+    .banner-text h2 {
+        font-size: 2.3em;
+    }
+
+	#menuToggle {
 		right: 16%; 
 	}
 }
 @media(max-width: 1366px){
+    .banner-text h2 {
+        font-size: 2.3em;
+    }
+
     .banner-left img {
         width: 180%;
         /*margin-bottom: 0 !important;*/
@@ -1378,7 +1392,7 @@ a.accordion-section-title span {
 		font-size: 1.3em;
 	}
 	.banner-text h2 {
-		font-size: 3.1em;
+		font-size: 2.3em;
 	}
 }
 @media(max-width: 1080px){
@@ -1620,11 +1634,14 @@ a.accordion-section-title span {
 	}
 }
 @media(max-width: 768px){
+    .banner-text h2 {
+        font-size: 2.9em;
+    }
 
 }
 @media(max-width: 736px){
 	.banner-text h2 {
-		font-size: 2.3em;
+		font-size: 1.7em;
 	}
 	.banner-text h2 span {
 		font-size: 1.4em;
@@ -1661,7 +1678,7 @@ a.accordion-section-title span {
 }
 @media(max-width: 667px){
 	.banner-text h2 {
-		font-size: 2em;
+		font-size: 1.5em;
 	}
 	.banner-text p {
 		font-size: 1.2em;
@@ -1742,7 +1759,7 @@ a.accordion-section-title span {
 		width: 190px;
 	}
 	.banner-text h2 {
-		font-size: 1.9em;
+		font-size: 1.5em;
 	}
 	.banner-text p {
 		font-size: 1.1em;
@@ -1800,6 +1817,9 @@ a.accordion-section-title span {
 	.banner-text {
 		padding: 6em 0 7em;
 	}
+    .banner-text h2 {
+        font-size: 1.3em;
+    }
 	h3.w3l-title {
 		font-size: 2.8em;
 		margin-bottom: 1em;
@@ -1870,7 +1890,7 @@ a.accordion-section-title span {
 }
 @media(max-width: 568px){
 	.banner-text h2 {
-		font-size: 1.7em;
+		font-size: 1.3em;
 	}
 	a.wthree-more {
 		font-size: .85em;
