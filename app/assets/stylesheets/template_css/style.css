@@ -1353,11 +1353,24 @@ a.accordion-section-title span {
 	}
 }
 @media(max-width: 1366px){
+    .banner-left img {
+        width: 180%;
+        /*margin-bottom: 0 !important;*/
+        margin-top: 60%;
+        bottom: 0;
+    }
 	#menuToggle {
 		right: 17%;
 	}
 }
 @media(max-width: 1280px){
+    .banner-left img {
+        width: 200%;
+        /*margin-bottom: 0 !important;*/
+        margin-top: 60%;
+        bottom: 0;
+    }
+
 	#menuToggle {
 		right:19%;
 	}
@@ -1369,6 +1382,12 @@ a.accordion-section-title span {
 	}
 }
 @media(max-width: 1080px){
+    .banner-left img {
+        width: 180%;
+        /*margin-bottom: 0 !important;*/
+        margin-top: 60%;
+        bottom: 0;
+    }
 	#menuToggle {
 		right: 21%;
 	}
@@ -1433,6 +1452,12 @@ a.accordion-section-title span {
 	}
 }
 @media(max-width: 1050px){
+    .banner-left img {
+        width: 180%;
+        /*margin-bottom: 0 !important;*/
+        margin-top: 60%;
+        bottom: 0;
+    }
 	#menuToggle {
 		right: 22%;
 	}
