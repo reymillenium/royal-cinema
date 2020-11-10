@@ -1638,6 +1638,13 @@ a.accordion-section-title span {
         font-size: 2.9em;
     }
 
+    .banner-left img {
+        width: 215%;
+        /*margin-bottom: 0 !important;*/
+        margin-top: 60%;
+        bottom: 0;
+    }
+
 }
 @media(max-width: 736px){
 	.banner-text h2 {
