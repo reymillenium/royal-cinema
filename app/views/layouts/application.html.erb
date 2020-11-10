@@ -12,15 +12,6 @@
 </head>
 
 <body>
-
-
-<%= yield %>
-
-
-
-
-
-
 <!-- banner -->
 <div id="home" class="banner">
   <div class="banner-agileinfo">
@@ -66,6 +57,9 @@
   </div>
 </div>
 <!-- //banner -->
+
+<%= yield %>
+
 <!-- about -->
 <div class="about" id="about">
   <div class="container">
@@ -116,6 +110,7 @@
   </div>
 </div>
 <!-- //about -->
+
 <!-- stats -->
 <div class="stats wthree-sub" id="skills">
   <div class="container">
@@ -167,6 +162,7 @@
   </div>
 </div>
 <!-- //stats -->
+
 <!-- services -->
 <div class="services" id="services">
   <div class="container">
@@ -216,6 +212,7 @@
   </div>
 </div>
 <!-- //services -->
+
 <!-- interests -->
 <div class="intra-w3l">
   <div class="container">
@@ -244,6 +241,7 @@
   </div>
 </div>
 <!-- //interests -->
+
 <!-- experience -->
 <div class="services-w3l" id="experience">
   <div class="container">
@@ -313,6 +311,7 @@
   </div>
 </div>
 <!-- //experience -->
+
 <!-- education -->
 <div class="experience" id="education">
   <div class="container">
@@ -377,6 +376,7 @@
   </div>
 </div>
 <!-- //education -->
+
 <!-- projects -->
 <div class="portfolio" id="projects">
   <div class="container">
@@ -503,13 +503,12 @@
   </div>
 </div>
 <!-- //projects -->
+
 <!-- introduce -->
 <div class="confi-w3l">
   <div class="container">
     <h3>Hello....</h3>
     <p>It's my pleasure to introduce my self..well, I'm Reinier Garcia.</p>
-    <!--    <p>My strengths are my attitude that i like to take challenges that I CAN do it,my way of thinking that i take both-->
-    <!--      success and failure in a balanced manner..</p>-->
     <p>
       I am a Highly focused and reliable mid level Full-Stack Web Developer, with an excellent learning capacity and a
       high dedication to work. Competent in handling multiple tasks and concerns with the utmost professionalism.
@@ -518,6 +517,7 @@
   </div>
 </div>
 <!-- //introduce -->
+
 <!-- //contact -->
 <div class="address" id="contact">
   <div class="container">
@@ -556,6 +556,7 @@
   </div>
 </div>
 <!--//contact-->
+
 <!-- footer -->
 <div class="footer w3ls">
   <div class="container">
@@ -622,6 +623,7 @@
 <a href="#home" id="toTop" class="scroll" style="display: block;">
   <span id="toTopHover" style="opacity: 1;"> </span></a>
 <!-- //for-bottom-to-top smooth scrolling -->
+
 <!-- menu-script -->
 <script>
     (function ($) {
@@ -643,6 +645,7 @@
     })($);
 </script>
 <!-- //menu-script -->
+
 <!-- baneer-js -->
 <!--<script src="app/javascript/packs/responsiveslides.min.js"></script>-->
 <%#= javascript_pack_tag 'responsiveslides' %>
@@ -667,6 +670,7 @@
     });
 </script>
 <!-- //baneer-js -->
+
 <!-- skills -->
 <!--<script src="app/javascript/packs/skill.bars.jquery.js"></script>-->
 <%#= javascript_pack_tag 'skill.bars.jquery' %>
@@ -683,6 +687,7 @@
     });
 </script>
 <!-- //skills -->
+
 <!-- timeline -->
 <!--<script type="text/javascript" src="app/javascript/packs/jquery.cntl.js"></script>-->
 <script type="text/javascript">
@@ -697,6 +702,7 @@
     });
 </script>
 <!-- //timeline -->
+
 <!-- accordion -->
 <script>
     jQuery(document).ready(function () {
@@ -725,6 +731,7 @@
     });
 </script>
 <!-- //accordion -->
+
 <!-- for projects -->
 <!--<script src="app/javascript/packs/jquery.tools.min.js"></script>-->
 <%#= javascript_pack_tag 'jquery.tools.min' %>
@@ -733,6 +740,7 @@
 <!--<script src="app/javascript/packs/jquery.cm-overlay.js"></script>-->
 <%#= javascript_pack_tag 'jquery.cm-overlay' %>
 <!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>-->
+<%= javascript_pack_tag 'lightbox' %>
 <script>
     $(document).ready(function () {
         // $('.cm-overlay').cmOverlay();
@@ -745,5 +753,4 @@
 <!-- //smooth scrolling -->
 <!-- //js-scripts -->
 </body>
-<%= javascript_pack_tag 'lightbox' %>
 </html>
