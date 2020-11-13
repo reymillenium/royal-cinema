@@ -11,6 +11,7 @@ class ContactsController < ApplicationController
       redirect_notice = "The contact was not sent successfully"
     end
 
+    contact_service.send_email(@contact)
     redirect_to @return_to, notice: redirect_notice
   end
 
