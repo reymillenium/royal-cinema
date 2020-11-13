@@ -4,14 +4,20 @@ class ContactsController < ApplicationController
 
   def create
     @contact = contact_service.build_contact(contact_params)
+    response = contact_service.send_email(@contact)
 
-    if @contact.save
-      redirect_notice = "The contact was sent successfully"
-    else
-      redirect_notice = "The contact was not sent successfully"
-    end
+    redirect_notice = if @contact.save
+                        'The contact was stored'
+                      else
+                        'The contact was not stored'
+                      end
 
-    contact_service.send_email(@contact)
+    redirect_notice += if response.status_code.to_i == 202
+                         ' & was sent successfully'
+                       else
+                         ' & was not sent successfully'
+                       end
+
     redirect_to @return_to, notice: redirect_notice
   end
 
