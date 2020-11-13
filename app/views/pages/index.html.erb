@@ -1,3 +1,9 @@
+<%
+  contact_model = Contact
+  contact = local_assigns.fetch(:contact, Contact.new)
+  return_to = local_assigns.fetch(:return_to, request.fullpath)
+%>
+
 <!-- about -->
 <div class="about" id="about">
   <div class="container">
@@ -1040,13 +1046,25 @@
       <div class="col-md-6 address-left wow agile fadeInLeft animated" data-wow-delay=".5s">
         <div class="address-grid">
           <h4 class="wow fadeIndown animated" data-wow-delay=".5s">Get In Touch</h4>
-          <form action="#" method="post">
-            <input type="text" placeholder="Name" name="name" required="">
-            <input type="email" placeholder="Email" name="email" required="">
-            <input type="text" placeholder="Subject" name="subject" required="">
-            <textarea placeholder="Message" required=""></textarea>
-            <input type="submit" value="SEND">
-          </form>
+          <!-- <form action="#" method="post">-->
+          <!-- <input type="text" placeholder="Name" name="name" required="">-->
+          <!-- <input type="email" placeholder="Email" name="email" required="">-->
+          <!-- <input type="text" placeholder="Subject" name="subject" required="">-->
+          <!-- <textarea placeholder="Message" required=""></textarea>-->
+          <!-- <input type="submit" value="SEND">-->
+          <!-- </form>-->
+
+          <%= form_with(model: contact, local: true) do |form| %>
+            <%= hidden_field_tag :return_to, return_to %>
+
+            <%= form.text_field :name, placeholder: 'Name', autofocus: true %>
+            <%= form.text_field :email, placeholder: 'Email', autofocus: true %>
+            <%= form.text_field :subject, placeholder: 'Subject', autofocus: true %>
+            <%= form.text_area :message, placeholder: 'Message', autofocus: true, disabled: false %>
+
+            <%= form.submit "SEND", name: "send" %>
+          <% end %>
+
         </div>
       </div>
       <div class="col-md-6 address-right">
