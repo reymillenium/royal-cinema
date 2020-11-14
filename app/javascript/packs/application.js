@@ -15,10 +15,10 @@ import 'bootstrap'
 // import './bootstrap'
 
 // Enables the tooltips & popovers:
-document.addEventListener("turbolinks:load", () => {
-    $('[data-toggle="tooltip"]').tooltip()
-    $('[data-toggle="popover"]').popover()
-});
+// document.addEventListener("turbolinks:load", () => {
+//     $('[data-toggle="tooltip"]').tooltip()
+//     $('[data-toggle="popover"]').popover()
+// });
 
 // FontAwesome scripting: (Removing this line fixed problem with not displayed fontawesome)
 // import "@fortawesome/fontawesome-free/js/all";
@@ -34,7 +34,7 @@ import './jquery.cntl'
 // import './jquery.mobile-1.5.0-rc1.min'
 import './jquery.tools.min'
 import './skill.bars.jquery'
-import './jquery.mobile.custom.min'
+// import './jquery.mobile.custom.min'
 
 // This is what made works the lightbox gallery, after copying lightbox.js into packs:
 require("./lightbox")

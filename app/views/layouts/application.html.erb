@@ -38,10 +38,12 @@
       </div>
     </div>
     <!-- //header -->
+
+    <%= render("shared/flash_messages") %>
+
     <div class="banner-main">
       <div class="container">
         <div class="col-md-5 banner-left">
-          <!--          <img src=<%#= "#{asset_path 'i1.png'}" %> alt="">-->
           <img class="float-left" src=<%= "#{asset_path 'banner_reinier_portrait.png'}" %> alt="">
         </div>
         <div class="col-md-7 banner-text">
@@ -88,16 +90,6 @@
 <!-- //footer -->
 
 <!-- js-scripts -->
-<!-- js -->
-<!--<script type="text/javascript" src="app/javascript/packs/jquery-2.1.4.min.js"></script>-->
-<!--<script type="text/javascript" src="app/javascript/packs/bootstrap.js"></script>-->
-<!-- //js -->
-
-<!-- start-smoth-scrolling -->
-<!--<script type="text/javascript" src="app/javascript/packs/move-top.js"></script>-->
-<%#= javascript_pack_tag 'move-top' %>
-<!--<script type="text/javascript" src="app/javascript/packs/easing.js"></script>-->
-<%#= javascript_pack_tag 'easing' %>
 <script type="text/javascript">
     $(document).ready(function ($) {
         $(".scroll").click(function (event) {
@@ -105,6 +97,7 @@
             $('html,body').animate({scrollTop: $(this.hash).offset().top}, 1000);
         });
     });
+
 </script>
 <!-- start-smoth-scrolling -->
 <!-- for-bottom-to-top smooth scrolling -->
@@ -236,14 +229,7 @@
 </script>
 <!-- //accordion -->
 
-<!-- for projects -->
-<!--<script src="app/javascript/packs/jquery.tools.min.js"></script>-->
-<%#= javascript_pack_tag 'jquery.tools.min' %>
-<!--<script src="app/javascript/packs/jquery.mobile.custom.min.js"></script>-->
-<%#= javascript_pack_tag 'jquery.mobile.custom' %>
-<!--<script src="app/javascript/packs/jquery.cm-overlay.js"></script>-->
-<%#= javascript_pack_tag 'jquery.cm-overlay' %>
-<!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>-->
+<!-- for 'My Projects' Gallery -->
 <%= javascript_pack_tag 'lightbox' %>
 <script>
     $(document).ready(function () {
@@ -251,6 +237,7 @@
     });
 </script>
 <!-- //for projects -->
+
 <!-- smooth scrolling -->
 <!--<script src="app/javascript/packs/SmoothScroll.min.js"></script>-->
 <%#= javascript_pack_tag 'SmoothScroll' %>
