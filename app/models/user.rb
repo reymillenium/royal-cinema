@@ -5,6 +5,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   # Relations
-  has_many :contacts, inverse_of: :user, foreign_key: :user_id, dependent: :destroy
+  # has_many :contacts, inverse_of: :user, foreign_key: :user_id, dependent: :destroy
 
 end

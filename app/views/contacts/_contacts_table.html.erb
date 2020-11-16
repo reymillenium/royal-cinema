@@ -1,0 +1,44 @@
+<%
+  return_to = local_assigns.fetch(:return_to, request.fullpath)
+  contacts = local_assigns.fetch(:contacts, [])
+  contacts_scope_meta ||= nil
+  contact_model = Note
+%>
+
+<div class="card-body">
+  <div class="table-responsive">
+    <table class="table table-bordered table-striped" id="dataTable" width="100%" cellspacing="0">
+      <thead>
+      <tr>
+        <th>
+          <%= sort_link(contacts_scope_meta, :name, { default_order: :asc }) %>
+        </th>
+        <th>
+          <%= sort_link(contacts_scope_meta, :message, { default_order: :asc }) %>
+        </th>
+        <th>
+          <%= sort_link(contacts_scope_meta, :created_at, { default_order: :asc }) %>
+        </th>
+        <th>
+          <%= sort_link(contacts_scope_meta, :updated_at, { default_order: :asc }) %>
+        </th>
+        <th colspan="1"></th>
+      </tr>
+      </thead>
+
+      <tbody>
+      <% if contacts.present? %>
+        <%= render partial: "contacts/contact_row", collection: contacts, as: :contact, locals: { return_to: return_to } %>
+      <% else %>
+        <tr>
+          <td colspan="6" class="text-center">
+            <i class="fa fa-info-circle"></i>
+            <i><%= t('errors.resources.not_found', resource: humanize_model(contact_model, pluralize: true, titleize: false)) %></i>
+          </td>
+        </tr>
+      <% end %>
+      </tbody>
+
+    </table>
+  </div>
+</div>
