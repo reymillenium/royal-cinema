@@ -93,7 +93,8 @@
       <div class="card-footer text-center">
         <div class="small">
           <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
-            <%= link_to "Need an account? Sign up!", new_registration_path(resource_name), style: "text-decoration: none;" %>
+            <%#= link_to "Need an account? Sign up!", new_registration_path(resource_name), style: "text-decoration: none;" %>
+            <%= link_to "Not the owner? Go back!", pages_path, style: "text-decoration: none;" %>
             <br/>
           <% end %>
         </div>
