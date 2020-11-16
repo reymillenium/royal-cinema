@@ -9,13 +9,13 @@
   <%#= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
 
   <%# if params[:controller] == 'post'  %>
-    <%#= stylesheet_link_tag 'login.scss' %>
+  <%#= stylesheet_link_tag 'login.scss' %>
   <%# end %>
-    <%= stylesheet_link_tag 'login' %>
+  <%= stylesheet_link_tag 'login' %>
   <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
 </head>
 
-<body class="bg-primary">
+<body class="bg-secondary">
 <div id="layoutAuthentication">
   <div id="layoutAuthentication_content">
     <main>
@@ -29,7 +29,11 @@
     <footer class="py-4 bg-light mt-auto">
       <div class="container-fluid">
         <div class="d-flex align-items-center justify-content-between small">
-          <div class="text-muted">Copyright &copy; SharpNotes 2020</div>
+          <div class="text-muted">&copy; <%= Time.now.year.to_s %>. All rights reserved | Developed by
+            <%= link_to "https://www.linkedin.com/in/reymillenium/", class: "linkedin", target: '_linkedin' do %>
+              Reinier Garcia
+            <% end %>
+          </div>
           <div>
             <a href="#">Privacy Policy</a>
             &middot;
