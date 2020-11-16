@@ -13,15 +13,23 @@
         <th>
           <%= sort_link(contacts_scope_meta, :name, { default_order: :asc }) %>
         </th>
+
+        <th>
+          <%= sort_link(contacts_scope_meta, :email, { default_order: :asc }) %>
+        </th>
+
+        <th>
+          <%= sort_link(contacts_scope_meta, :subject, { default_order: :asc }) %>
+        </th>
+
         <th>
           <%= sort_link(contacts_scope_meta, :message, { default_order: :asc }) %>
         </th>
+
         <th>
           <%= sort_link(contacts_scope_meta, :created_at, { default_order: :asc }) %>
         </th>
-        <th>
-          <%= sort_link(contacts_scope_meta, :updated_at, { default_order: :asc }) %>
-        </th>
+
         <th colspan="1"></th>
       </tr>
       </thead>

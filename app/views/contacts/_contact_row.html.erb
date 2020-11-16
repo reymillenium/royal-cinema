@@ -12,6 +12,19 @@
       <%= link_to contact.name, contact_path(contact) %>
     </div>
   </td>
+
+  <td>
+    <div class="nowrap">
+      <%= contact.email %>
+    </div>
+  </td>
+
+  <td>
+    <div class="nowrap">
+      <%= contact.subject %>
+    </div>
+  </td>
+
   <td>
     <div class="nowrap">
       <% popover_data = body_text.length > body_truncate_length ? { toggle: :popover, trigger: :hover, title: t('contacts.column_header_labels.body'), content: contact.message.to_s, placement: :left, html: true } : {} %>
@@ -24,12 +37,6 @@
   <td>
     <div class="nowrap">
       <%= if_applicable(contact.created_at.present? ? l(contact.created_at) : nil, titleize: false) %>
-    </div>
-  </td>
-
-  <td>
-    <div class="nowrap">
-      <%= if_applicable(contact.updated_at.present? ? l(contact.updated_at) : nil, titleize: false) %>
     </div>
   </td>
 
