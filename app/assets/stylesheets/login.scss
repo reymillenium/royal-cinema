@@ -1,23 +1,12 @@
-/* Login template */
-.bg-primary {
-    background-color: #007bff !important;
-}
+/* For the Login & contacts layouts */
 
 
-
-#layoutAuthentication {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-}
-#layoutAuthentication #layoutAuthentication_content {
-    min-width: 0;
-    flex-grow: 1;
-}
-#layoutAuthentication #layoutAuthentication_footer {
-    min-width: 0;
-}
-
+$fa-font-path: '@fortawesome/fontawesome-free/webfonts';
+@import '@fortawesome/fontawesome-free/scss/fontawesome';
+@import '@fortawesome/fontawesome-free/scss/solid';
+@import '@fortawesome/fontawesome-free/scss/regular';
+@import '@fortawesome/fontawesome-free/scss/brands';
+@import '@fortawesome/fontawesome-free/scss/v4-shims';
 
 // To handle the animations
 @import "animate.min";
