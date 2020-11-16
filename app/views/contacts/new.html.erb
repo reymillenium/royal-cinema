@@ -1,0 +1,30 @@
+<%
+  note = @note || Note.new
+  return_to = @return_to
+%>
+
+<br>
+<h1 class="mt-4"><%= t('notes.new.header') %></h1>
+
+<ol class="breadcrumb mb-4 hidden-print">
+  <li>
+    <%= link_to notes_path do %>
+      <%= t('notes.nav') %>
+    <% end %>
+  </li> &nbsp;/&nbsp;
+  <li class="active"> <%= t('notes.create.header') %></li>
+</ol>
+
+<div class="card mb-4">
+  <div class="card-header">
+    <%= link_to notes_path, class: "btn btn-danger btn-sm", data: { toggle: 'tooltip', placement: 'top' }, title: t('actions.back') do %>
+      <i class="fa fa-hand-point-left fa-fw" aria-hidden="true"></i>
+      Back
+    <% end %>
+  </div>
+
+  <%= render partial: 'form', locals: {
+      note: note,
+      return_to: return_to,
+  } %>
+</div>

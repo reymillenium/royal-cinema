@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>SharpNotes 2020</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+  <meta property="og:image" content="<%= asset_path 'ruby-on-rails-logo.png' %>"/>
+  <link rel="shortcut icon" href="<%= asset_path 'ruby-on-rails-logo.png' %>"/>
+
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
+
+<body class="sb-nav-fixed">
+
+<nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
+  <img class="ml-4" style="width: 41px; height: 43px;" src=<%= "#{asset_path 'ruby-on-rails-logo.png'}" %>>
+  <%= link_to contacts_path, class: 'navbar-brand' do %>
+    <span style="color: #0369D9; font-weight: bold;">Rey</span><span style="color: #bc3939; font-weight: bold;">Millenium</span>
+  <% end %>
+  <button class="btn btn-link btn-sm order-1 order-lg-0" id="sidebarToggle" href="#"><i class="fas fa-bars"></i>
+  </button>
+  <div class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
+  </div>
+  <!-- Navbar-->
+  <ul class="navbar-nav ml-auto ml-md-0">
+    <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" id="userDropdown" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
+      <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
+        <% if user_signed_in? %>
+          <%= link_to 'Edit profile', edit_user_registration_path, class: 'dropdown-item' %>
+          <div class="dropdown-divider"></div>
+          <%= link_to "Logout", destroy_user_session_path, method: :delete, class: 'dropdown-item' %>
+        <% else %>
+          <%= link_to "Sign up", new_user_registration_path, class: 'dropdown-item' %>
+          <%= link_to "Login", new_user_session_path, class: 'dropdown-item' %>
+        <% end %>
+      </div>
+    </li>
+  </ul>
+</nav>
+<div id="layoutSidenav">
+  <div id="layoutSidenav_nav">
+    <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
+      <div class="sb-sidenav-menu">
+        <div class="nav">
+          <div class="sb-sidenav-menu-heading">Assignment Core</div>
+          <%= link_to contacts_path, class: 'nav-link' do %>
+            <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
+            Contacts
+          <% end %>
+
+<!--          <div class="sb-sidenav-menu-heading">Extra</div>-->
+          <%#= link_to extra_pages_path, class: "nav-link faa-parent animated-hover" do %>
+            <%#= image_tag 'icons/About-me-icon_32X32.png', width: '24px', height: '24px', class: 'fa faa-ring fa-slow' %>
+<!--            <div class="sb-nav-link-icon"><i class="fas fa-address-card"></i></div>-->
+<!--            About-->
+          <%# end %>
+        </div>
+      </div>
+      <div class="sb-sidenav-footer">
+        <div class="small">Logged in as:</div>
+        <% if user_signed_in? %>
+          <div><%= current_user.email %></div>
+        <% else %>
+          Start Bootstrap
+        <% end %>
+      </div>
+    </nav>
+  </div>
+  <div id="layoutSidenav_content">
+    <main>
+      <div class="container-fluid">
+        <%= render("shared/flash_messages") %>
+        <%= yield %>
+      </div>
+    </main>
+
+    <footer class="py-4 bg-light mt-auto">
+      <div class="container-fluid">
+        <div class="d-flex align-items-center justify-content-between small">
+          <!--          <div class="text-muted">Copyright &copy; SharpNotes 2020</div>-->
+          <div class="text-muted">&copy; <%= Time.now.year.to_s %>. All rights reserved | Developed by
+            <%= link_to "https://www.linkedin.com/in/reymillenium/", class: "linkedin", target: '_linkedin' do %>
+              Reinier Garcia
+            <% end %>
+          </div>
+          <div>
+            <a href="#">Privacy Policy</a>
+            &middot;
+            <a href="#">Terms &amp; Conditions</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+</div>
+<script src="app/javascript/packs/contacts/scripts.js"></script>
+<script src="app/javascript/packs/contacts/chart-area-demo.js"></script>
+<script src="app/javascript/packs/contacts/chart-bar-demo.js"></script>
+<script src="app/javascript/packs/contacts/datatables-demo.js"></script>
+<%= javascript_pack_tag 'scripts' %>
+</body>
+</html>

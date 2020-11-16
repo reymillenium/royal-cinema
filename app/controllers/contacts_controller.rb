@@ -1,6 +1,16 @@
 class ContactsController < ApplicationController
 
+  before_action :set_contact, only: %i[show destroy]
   before_action :update_concerned_path, only: [:create]
+
+  def index
+    contacts_scope = Contact.visible_by(current_user)
+    @contacts_scope_meta = contacts_scope.ransack(@scope)
+    @contacts_scope_meta.sorts = "#{@sort_column} #{@sort_direction}" if @contacts_scope_meta.sorts.empty?
+    @pagy, @contacts = pagy(@contacts_scope_meta.result, items: 10)
+  end
+
+  def show; end
 
   def create
     @contact = contact_service.build_contact(contact_params)
@@ -20,10 +30,23 @@ class ContactsController < ApplicationController
     end
   end
 
+  def destroy
+    @contact.destroy
+    respond_to do |format|
+      # format.html { redirect_to contacts_url, notice: t('notes.destroy.success_notice') }
+      format.html { redirect_to contacts_url, notice: 'The message was destroyed successfully' }
+      format.json { head :no_content }
+    end
+  end
+
   private
 
   def contact_service
     ContactService
+  end
+
+  def set_contact
+    @contact = Contact.visible_by(current_user).find(params[:id])
   end
 
   # Only allow a list of trusted parameters through.
