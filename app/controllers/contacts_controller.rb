@@ -1,13 +1,18 @@
 class ContactsController < ApplicationController
+  include CommonControl
 
+  before_action :authenticate_user!
   before_action :set_contact, only: %i[show destroy]
   before_action :update_concerned_path, only: [:create]
 
   def index
-    contacts_scope = Contact.visible_by(current_user)
+    # contacts_scope = Contact.visible_by(current_user)
+    contacts_scope = Contact.all
     @contacts_scope_meta = contacts_scope.ransack(@scope)
     @contacts_scope_meta.sorts = "#{@sort_column} #{@sort_direction}" if @contacts_scope_meta.sorts.empty?
     @pagy, @contacts = pagy(@contacts_scope_meta.result, items: 10)
+
+    # binding.pry
   end
 
   def show; end
@@ -46,7 +51,8 @@ class ContactsController < ApplicationController
   end
 
   def set_contact
-    @contact = Contact.visible_by(current_user).find(params[:id])
+    # @contact = Contact.visible_by(current_user).find(params[:id])
+    @contact = Contact.all.find(params[:id])
   end
 
   # Only allow a list of trusted parameters through.
@@ -55,8 +61,8 @@ class ContactsController < ApplicationController
   end
 
   # Updates the return to path
-  def update_concerned_path
-    @return_to = params[:return_to]
-  end
+  # def update_concerned_path
+  #   @return_to = params[:return_to]
+  # end
 
 end

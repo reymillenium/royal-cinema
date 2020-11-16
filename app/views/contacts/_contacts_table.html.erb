@@ -2,7 +2,7 @@
   return_to = local_assigns.fetch(:return_to, request.fullpath)
   contacts = local_assigns.fetch(:contacts, [])
   contacts_scope_meta ||= nil
-  contact_model = Note
+  contact_model = Contact
 %>
 
 <div class="card-body">
