@@ -4,7 +4,7 @@ class ContactService
   include SendGrid
   extend ContactsHelper
 
-  # Params not desired to build/update a note object
+  # Params not desired to build/update a contact object
   PARAMS_BLACK_LIST = %w[id].freeze
   EXCEPTIONS_WHEN_CLONING = %w[id created_at updated_at].freeze
 
@@ -26,7 +26,7 @@ class ContactService
     response
   end
 
-  # Cleans parameters not applicable to note attributes
+  # Cleans parameters not applicable to contact attributes
   def self.clean_parameters(params, blacklist = PARAMS_BLACK_LIST)
     params.reject do |param_key, _|
       param_key.in?(blacklist)

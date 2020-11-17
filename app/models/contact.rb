@@ -1,25 +1,10 @@
 class Contact < ApplicationRecord
 
-  # Trix ActionText
-  # has_rich_text :body
-
-  # Relations:
-  # belongs_to :user, class_name: 'User', inverse_of: :contacts
-  # has_one :action_text_rich_text,
-  #         class_name: 'ActionText::RichText',
-  #         as: :record
-
   # Validations:
-  # validates :title, presence: true
-  # validates :title, length: { maximum: 30 }
-  # validates :body, length: {
-  #   maximum: 1000,
-  #   tokenizer: lambda { |str| str.scan(/./) }
-  # }
-
-  # Scopes:
-  # scope :visible_by, ->(user) {
-  #   where(user_id: user)
-  # }
+  validates :name, presence: true
+  validates :email, presence: true
+  validates :email, format: { with: URI::MailTo::EMAIL_REGEXP }
+  validates :subject, presence: true
+  validates :message, presence: true
 
 end

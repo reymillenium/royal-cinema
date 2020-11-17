@@ -7,7 +7,6 @@
   <meta property="og:image" content="<%= asset_path 'ruby-on-rails-logo.png' %>"/>
   <link rel="shortcut icon" href="<%= asset_path 'ruby-on-rails-logo.png' %>"/>
 
-  <%#= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   <%= stylesheet_link_tag 'login' %>
   <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
 </head>
@@ -45,18 +44,11 @@
     <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
       <div class="sb-sidenav-menu">
         <div class="nav">
-          <div class="sb-sidenav-menu-heading">Assignment Core</div>
+          <div class="sb-sidenav-menu-heading">Dashboard</div>
           <%= link_to contacts_path, class: 'nav-link' do %>
             <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
             Contacts
           <% end %>
-
-<!--          <div class="sb-sidenav-menu-heading">Extra</div>-->
-          <%#= link_to extra_pages_path, class: "nav-link faa-parent animated-hover" do %>
-            <%#= image_tag 'icons/About-me-icon_32X32.png', width: '24px', height: '24px', class: 'fa faa-ring fa-slow' %>
-<!--            <div class="sb-nav-link-icon"><i class="fas fa-address-card"></i></div>-->
-<!--            About-->
-          <%# end %>
         </div>
       </div>
       <div class="sb-sidenav-footer">
@@ -80,7 +72,6 @@
     <footer class="py-4 bg-light mt-auto">
       <div class="container-fluid">
         <div class="d-flex align-items-center justify-content-between small">
-          <!--          <div class="text-muted">Copyright &copy; SharpNotes 2020</div>-->
           <div class="text-muted">&copy; <%= Time.now.year.to_s %>. All rights reserved | Developed by
             <%= link_to "https://www.linkedin.com/in/reymillenium/", class: "linkedin", target: '_linkedin' do %>
               Reinier Garcia

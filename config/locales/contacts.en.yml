@@ -213,9 +213,11 @@ en:
     edit:
       header: "Edit Message"
     destroy:
-      success_notice: "Message was successfully destroyed."
+      success_notice: "The Message was successfully destroyed."
     clone:
       success_notice: "The Message with the title: '%{resource}' was successfully cloned."
+    send:
+      success_notice: "The Message was sent successfully."
     download_contact:
       errors:
         wrong_password: "The Message by the name of '%{resource}' has the wrong password."
