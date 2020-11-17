@@ -1,43 +1,3 @@
-<!--<h2>Log in</h2>-->
-
-<%#= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-<!--  <div class="field">-->
-<!--    <%#= f.label :email %><br />-->
-<%#= f.email_field :email, autofocus: true, autocomplete: "email" %>
-<!--  </div>-->
-
-<!--  <div class="field">-->
-<!--    <%#= f.label :password %><br />-->
-<%#= f.password_field :password, autocomplete: "current-password" %>
-<!--  </div>-->
-
-<%# if devise_mapping.rememberable? %>
-<!--    <div class="field">-->
-<%#= f.check_box :remember_me %>
-<%#= f.label :remember_me %>
-<!--    </div>-->
-<%# end %>
-
-<!--  <div class="actions">-->
-<%#= f.submit "Log in" %>
-<!--  </div>-->
-<%# end %>
-
-<%#= render "users/shared/links" %>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <br>
 <br>
 <div class="row justify-content-center mt-4" id="sharp_notes_login_form">
@@ -74,29 +34,17 @@
           <% end %>
 
           <div class="form-group d-flex align-items-center justify-content-between mt-4 mb-0">
-            <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
-              <%= link_to "Forgot your password?", new_password_path(resource_name), class: "small", style: "text-decoration: none;" %>
-            <% end %>
+            <%= link_to "Not the owner? Go back!", pages_path, class: "small", style: "text-decoration: none;" %>
             <div class="actions">
               <%= f.submit "Login", class: "btn btn-primary" %>
             </div>
-          </div>
-
-          <div class="form-group">
-            <%- if devise_mapping.confirmable? && controller_name != 'confirmations' %>
-              <%= link_to "Didn't receive confirmation instructions?", new_confirmation_path(resource_name), class: "small", style: "text-decoration: none;" %>
-            <% end %>
           </div>
         <% end %>
       </div>
 
       <div class="card-footer text-center">
         <div class="small">
-          <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
-            <%#= link_to "Need an account? Sign up!", new_registration_path(resource_name), style: "text-decoration: none;" %>
-            <%= link_to "Not the owner? Go back!", pages_path, style: "text-decoration: none;" %>
-            <br/>
-          <% end %>
+          <br/>
         </div>
       </div>
     </div>
