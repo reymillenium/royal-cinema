@@ -12,28 +12,56 @@
 
 <div class="card mb-4">
   <div class="card-header">
-    <%#= link_to edit_contact_path(@contact, return_to: contact_path(@contact)), class: "btn btn-success btn-sm", data: { toggle: 'tooltip', placement: 'top' }, title: t('actions.edit') do %>
-    <%= link_to "#", class: "btn btn-success btn-sm", data: { toggle: 'tooltip', placement: 'top' }, title: t('actions.edit') do %>
-      <i class="fa fa-pencil-alt fa-fw" aria-hidden="true"></i>
-      Edit Contact
+    <%= link_to contact_path(@contact), method: :delete, class: "btn btn-danger btn-sm", data: { confirm: t("actions.confirm"), toggle: 'tooltip', placement: 'top', disable_with: t('actions.deleting.short') }, title: t('actions.delete') do %>
+      <i class="fa fa-times fa-fw" aria-hidden="true"></i>
+      Delete Contact
     <% end %>
   </div>
 
   <div class="card-body">
     <!-- Details Row # 1:  -->
-    <div class="form-group">
-      <label class="small mb-1">
-        Name:
-      </label>
-      <div class="form-control" style="height: 50px; vertical-align: middle !important; padding-top: 12px;">
-        <%= if_applicable @contact.name, titleize: false %>
+    <div class="form-row">
+      <div class="col-md-6">
+        <div class="form-group">
+          <label class="small mb-1">
+            Name:
+          </label>
+          <div class="form-control" style="height: 50px; vertical-align: middle !important; padding-top: 12px;">
+            <%= if_applicable @contact.name, titleize: false %>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="form-group">
+          <label class="small mb-1">
+            Email:
+          </label>
+          <div class="form-control" style="height: 50px; vertical-align: middle !important; padding-top: 12px;">
+            <%= if_applicable @contact.email, titleize: false %>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Details Row # 2:  -->
+    <div class="form-row">
+      <div class="col-md-12">
+        <div class="form-group">
+          <label class="small mb-1">
+            Subject:
+          </label>
+          <div class="form-control" style="height: 50px; vertical-align: middle !important; padding-top: 12px;">
+            <%= if_applicable @contact.subject, titleize: false %>
+          </div>
+        </div>
       </div>
     </div>
 
     <!-- Separation Row: Makes this partial more similar to the edit/new form  -->
     <div class="form-group"></div>
 
-    <!-- Details Row # 2: -->
+    <!-- Details Row # 3: -->
     <div class="form-group">
       <label class="small mb-1">
         Message:
