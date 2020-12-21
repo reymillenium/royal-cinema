@@ -44,6 +44,7 @@ group :development, :test do
   gem 'pry'
 end
 gem 'figaro'
+gem "recaptcha"
 
 gem 'lightbox2-rails'
 gem 'listen', '~> 3.2'
