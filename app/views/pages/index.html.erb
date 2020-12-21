@@ -1059,24 +1059,41 @@
             <%= form.text_field :subject, placeholder: 'Subject', autofocus: false %>
             <%= form.text_area :message, placeholder: 'Message', autofocus: false, disabled: false %>
 
-            <%= form.submit "SEND", name: "send" %>
+            <div class="row">
+              <div class="col-md-6">
+                <%= form.submit "SEND", name: "send" %>
+              </div>
+              <div class="col-md-6">
+                <div style="margin-top: 14px;">
+                  <%= recaptcha_tags %>
+                </div>
+              </div>
+            </div>
           <% end %>
 
         </div>
       </div>
+
       <div class="col-md-6 address-right">
         <div class="address-info wow fadeInRight animated" data-wow-delay=".5s">
           <h4>Location</h4>
           <p>Miami, FL 33135, United States.</p>
+          <p style="color: #F68415; font-size: 0.8em;">
+            Open to working remotely or in the five closest cities: Miami, Coral Gables, Hialeah, Miami Beach or Doral.
+          </p>
         </div>
+
         <div class="address-info address-mdl wow fadeInRight animated" data-wow-delay=".7s">
           <h4>Phone </h4>
           <p>+1 (786) 458-2150</p>
           <p>Please let me know before, via email, the day & time of your call, as well as your calling phone
-            number.</p>
-          <p style="color: #F68415; font-size: 1em;">
-            <small>* I don't receive unknown or unexpected phone calls & messages.</small></p>
+            number.
+          </p>
+          <p style="color: #F68415; font-size: 0.8em;">
+            * I don't receive unknown or unexpected phone calls & messages.
+          </p>
         </div>
+
         <div class="address-info agileits-info wow fadeInRight animated" da ta-wow-delay=".6s">
           <h4>Mail</h4>
           <p><a href="mailto:reymillenium@gmail.com"> reymillenium@gmail.com</a></p>
