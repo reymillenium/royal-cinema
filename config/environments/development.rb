@@ -6,6 +6,9 @@ Rails.application.configure do
   # since you don't have to restart the web server when you make code changes.
   config.cache_classes = false
 
+  # In order to access the local development website on my IPhone:
+  config.hosts << "reiniers-macbook-pro.local"
+
   # Do not eager load code on boot.
   config.eager_load = false
 

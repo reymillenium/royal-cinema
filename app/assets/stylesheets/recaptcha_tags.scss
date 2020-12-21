@@ -1,5 +1,65 @@
 .g-recaptcha {
   transform: scale(0.6);
   transform-origin: 0 0;
-  margin-left: 16px;
+  //margin-left: 16px;
+}
+
+@media(min-width: 2520px) {
+  .submit-button {
+    margin-left: 14px;
+  }
+}
+
+@media(min-width: 1680px) {
+  .submit-button {
+    margin-left: 14px;
+  }
+}
+
+@media(min-width: 1600px) {
+  .submit-button {
+    margin-left: 14px;
+  }
+}
+
+@media(min-width: 1582px) {
+  .submit-button {
+    margin-left: 14px;
+  }
+}
+
+@media(min-width: 1440px) {
+  .submit-button {
+    margin-left: 14px;
+  }
+}
+
+@media(min-width: 1386px) {
+  .submit-button {
+    margin-left: 14px;
+  }
+}
+
+@media(min-width: 1280px) {
+  .submit-button {
+    margin-left: 14px;
+  }
+}
+
+@media(min-width: 1080px) {
+  .submit-button {
+    margin-left: 14px;
+  }
+}
+
+@media(max-width: 1199px) {
+  .submit-button {
+    margin-left: -24px;
+  }
+}
+
+@media(max-width: 991px) {
+  .submit-button {
+    margin-left: 0;
+  }
 }
