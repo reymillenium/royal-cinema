@@ -23,7 +23,7 @@ class ContactsController < ApplicationController
     #                   ' & was not sent successfully'
     #                 end
 
-    if @contact.save
+    if verify_recaptcha(model: @contact) && @contact.save
       redirect_notice = t('contacts.send.success_notice')
       redirect_to @return_to, notice: redirect_notice
     else
