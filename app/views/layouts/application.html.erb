@@ -29,7 +29,7 @@
         </div>
         <div class="menu">
           <a href="" id="menuToggle"> <span class="navClosed"></span> </a>
-          <nav>
+          <nav id="sideBarNav">
             <a href="#home" class="active scroll">Home</a>
             <a href="#about" class="scroll">About Me</a>
             <a href="#skills" class="scroll">My Skills</a>
@@ -133,6 +133,7 @@
     (function ($) {
         // Menu Functions
         jQuery(document).ready(function () {
+
             $('#menuToggle').click(function (e) {
                 var $parent = $(this).parent('.menu');
                 $parent.toggleClass("open");
@@ -145,6 +146,21 @@
                 }, 200);
                 e.preventDefault();
             });
+
+            // OnMouseLeave for the sideBarNav (closing the menu when moving away the mouse)
+            $('#sideBarNav').on('mouseleave', function () {
+                var $menu = $('#menuToggle').parent('.menu');
+                $menu.toggleClass("open");
+                var navState = $menu.hasClass('open') ? "hide" : "show";
+                $(this).attr("title", navState + " navigation");
+                // Set the timeout to the animation length in the CSS.
+                setTimeout(function () {
+                    console.log("timeout set");
+                    $('#menuToggle > span').toggleClass("navClosed").toggleClass("navOpen");
+                }, 200);
+                e.preventDefault();
+            });
+
         });
     })($);
 </script>
