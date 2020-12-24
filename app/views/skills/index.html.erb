@@ -1,0 +1,13 @@
+<br>
+<h1 class="mt-4"><%= t("contacts.title") %></h1>
+
+<ol class="breadcrumb mb-4 hidden-print">
+  <li class="breadcrumb-item active"><%= t('contacts.nav') %></li>
+</ol>
+
+<%= render partial: 'contacts/index', locals: {
+    return_to: contacts_path,
+    contacts_scope_meta: @contacts_scope_meta,
+    contacts: @contacts
+} %>
+
