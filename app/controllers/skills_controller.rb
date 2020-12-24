@@ -2,8 +2,8 @@ class SkillsController < ApplicationController
   include CommonControl
 
   before_action :authenticate_user!
-  before_action :set_skill, only: %i[show destroy]
-  before_action :update_concerned_path, only: [:create]
+  before_action :set_skill, only: %i[show edit update destroy]
+  before_action :update_concerned_path, only: [:new, :create, :edit, :update]
 
   def index
     skills_scope = Skill.all
@@ -13,6 +13,13 @@ class SkillsController < ApplicationController
   end
 
   def show; end
+
+  def new
+    @skill = Skill.new
+  end
+
+  def edit
+  end
 
   def create
     @skill = skill_service.build_skill(skill_params)
