@@ -1,1 +1,1 @@
-json.array! @contacts, partial: "contacts/contact", as: :contact
+json.array! @skills, partial: "skills/skill", as: :skill

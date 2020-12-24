@@ -1,30 +1,30 @@
 <%
-  contact = @contact || Contact.new
+  skill = @skill || Skill.new
   return_to = @return_to
 %>
 
 <br>
-<h1 class="mt-4"><%= t('contacts.new.header') %></h1>
+<h1 class="mt-4"><%= t('skills.new.header') %></h1>
 
 <ol class="breadcrumb mb-4 hidden-print">
   <li>
-    <%= link_to contacts_path do %>
-      <%= t('contacts.nav') %>
+    <%= link_to skills_path do %>
+      <%= t('skills.nav') %>
     <% end %>
   </li> &nbsp;/&nbsp;
-  <li class="active"> <%= t('contacts.create.header') %></li>
+  <li class="active"> <%= t('skills.create.header') %></li>
 </ol>
 
 <div class="card mb-4">
   <div class="card-header">
-    <%= link_to contacts_path, class: "btn btn-danger btn-sm", data: { toggle: 'tooltip', placement: 'top' }, title: t('actions.back') do %>
+    <%= link_to skills_path, class: "btn btn-danger btn-sm", data: { toggle: 'tooltip', placement: 'top' }, title: t('actions.back') do %>
       <i class="fa fa-hand-point-left fa-fw" aria-hidden="true"></i>
       Back
     <% end %>
   </div>
 
   <%= render partial: 'form', locals: {
-      contact: contact,
-      return_to: return_to,
+    skill: skill,
+    return_to: return_to,
   } %>
 </div>

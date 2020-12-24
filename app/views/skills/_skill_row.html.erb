@@ -1,59 +1,47 @@
 <%
   return_to = local_assigns.fetch(:return_to, request.fullpath)
-  contact = local_assigns.fetch(:contact)
-  body_truncate_length = 160
-  # body_text = text_from_note(contact)
-  body_text = contact.message
+  skill = local_assigns.fetch(:skill)
 %>
 
 <tr>
   <td>
     <div class="nowrap">
-      <%= link_to contact.name, contact_path(contact) %>
+      <%= link_to skill.name, skill_path(skill) %>
     </div>
   </td>
 
   <td>
     <div class="nowrap">
-      <%= contact.email %>
+      <%= skill.color %>
     </div>
   </td>
 
   <td>
     <div class="nowrap">
-      <%= contact.subject %>
+      <%= skill.percentage %>
     </div>
   </td>
 
   <td>
     <div class="nowrap">
-      <% popover_data = body_text.length > body_truncate_length ? { toggle: :popover, trigger: :hover, title: t('contacts.column_header_labels.body'), content: contact.message.to_s, placement: :left, html: true } : {} %>
-      <%= content_tag :div, data: popover_data do %>
-        <%= truncate(body_text, length: body_truncate_length) %>
-      <% end %>
-    </div>
-  </td>
-
-  <td>
-    <div class="nowrap">
-      <%= if_applicable(contact.created_at.present? ? l(contact.created_at) : nil, titleize: false) %>
+      <%= if_applicable(skill.created_at.present? ? l(skill.created_at) : nil, titleize: false) %>
     </div>
   </td>
 
   <td class="nowrap">
-    <%#= link_to download_contact_as_word_contact_path(contact), class: "btn btn-sm", download: note.title, data: { toggle: 'tooltip', placement: 'top' }, title: t('actions.download') do %>
+    <%#= link_to download_skill_as_word_skill_path(skill), class: "btn btn-sm", download: note.title, data: { toggle: 'tooltip', placement: 'top' }, title: t('actions.download') do %>
     <!--      <i class="fa fa-download fa-fw" aria-hidden="true"></i>-->
     <%# end %>
 
-    <%#= link_to clone_contact_path(contact), class: "btn btn-sm", data: { toggle: 'tooltip', placement: 'top' }, title: t('actions.clone') do %>
+    <%#= link_to clone_skill_path(skill), class: "btn btn-sm", data: { toggle: 'tooltip', placement: 'top' }, title: t('actions.clone') do %>
     <!--      <i class="fa fa-clone fa-fw" aria-hidden="true"></i>-->
     <%# end %>
 
-    <%#= link_to edit_contact_path(contact, return_to: contacts_path), class: "btn btn-sm", data: { toggle: 'tooltip', placement: 'top' }, title: t('actions.edit') do %>
-    <!--      <i class="fa fa-pencil-alt fa-fw" aria-hidden="true"></i>-->
-    <%# end %>
+    <%= link_to edit_skill_path(skill, return_to: skills_path), class: "btn btn-sm", data: { toggle: 'tooltip', placement: 'top' }, title: t('actions.edit') do %>
+      <i class="fa fa-pencil-alt fa-fw" aria-hidden="true"></i>
+    <% end %>
 
-    <%= link_to contact_path(contact), method: :delete, class: "btn btn-sm", data: { confirm: t("actions.confirm"), toggle: 'tooltip', placement: 'top', disable_with: t('actions.deleting.short') }, title: t('actions.delete') do %>
+    <%= link_to skill_path(skill), method: :delete, class: "btn btn-sm", data: { confirm: t("actions.confirm"), toggle: 'tooltip', placement: 'top', disable_with: t('actions.deleting.short') }, title: t('actions.delete') do %>
       <i class="fa fa-times fa-lg fa-fw" aria-hidden="true"></i>
     <% end %>
   </td>

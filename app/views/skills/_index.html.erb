@@ -1,23 +1,23 @@
 <%
   return_to ||= local_assigns.fetch(:return_to, request.fullpath)
-  contacts_scope_meta ||= nil
-  contacts ||= nil
+  skills_scope_meta ||= nil
+  skills ||= nil
 %>
 
 <div class="card mb-4">
-  <%= render partial: "contacts/index_toolbar", locals: {
+  <%= render partial: "skills/index_toolbar", locals: {
       return_to: return_to,
-      contacts_scope_meta: contacts_scope_meta,
-      search_criteria: :name_or_email_or_subject_or_message_cont,
-      search_url: contacts_path,
+      skills_scope_meta: skills_scope_meta,
+      search_criteria: :name_cont,
+      search_url: skills_path,
       show_actions: false
   } %>
 
-  <%= render partial: "contacts/contacts_table", locals: {
+  <%= render partial: "skills/skills_table", locals: {
       return_to: return_to,
-      contacts_scope_meta: contacts_scope_meta,
-      contacts: contacts
+      skills_scope_meta: skills_scope_meta,
+      skills: skills
   } %>
 
-  <%= render partial: "contacts/index_bottombar" %>
+  <%= render partial: "skills/index_bottombar" %>
 </div>

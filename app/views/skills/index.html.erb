@@ -1,13 +1,13 @@
 <br>
-<h1 class="mt-4"><%= t("contacts.title") %></h1>
+<h1 class="mt-4"><%= t("skills.title") %></h1>
 
 <ol class="breadcrumb mb-4 hidden-print">
-  <li class="breadcrumb-item active"><%= t('contacts.nav') %></li>
+  <li class="breadcrumb-item active"><%= t('skills.nav') %></li>
 </ol>
 
-<%= render partial: 'contacts/index', locals: {
-    return_to: contacts_path,
-    contacts_scope_meta: @contacts_scope_meta,
-    contacts: @contacts
+<%= render partial: 'skills/index', locals: {
+    return_to: skills_path,
+    skills_scope_meta: @skills_scope_meta,
+    skills: @skills
 } %>
 

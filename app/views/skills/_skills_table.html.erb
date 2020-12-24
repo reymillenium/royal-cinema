@@ -1,8 +1,8 @@
 <%
   return_to = local_assigns.fetch(:return_to, request.fullpath)
-  contacts = local_assigns.fetch(:contacts, [])
-  contacts_scope_meta ||= nil
-  contact_model = Contact
+  skills = local_assigns.fetch(:skills, [])
+  skills_scope_meta ||= nil
+  skill_model = Skill
 %>
 
 <div class="card-body">
@@ -11,37 +11,33 @@
       <thead>
       <tr>
         <th>
-          <%= sort_link(contacts_scope_meta, :name, { default_order: :asc }) %>
+          <%= sort_link(skills_scope_meta, :name, { default_order: :asc }) %>
         </th>
 
         <th>
-          <%= sort_link(contacts_scope_meta, :email, { default_order: :asc }) %>
+          <%= sort_link(skills_scope_meta, :color, { default_order: :asc }) %>
         </th>
 
         <th>
-          <%= sort_link(contacts_scope_meta, :subject, { default_order: :asc }) %>
+          <%= sort_link(skills_scope_meta, :percentage, { default_order: :asc }) %>
         </th>
 
         <th>
-          <%= sort_link(contacts_scope_meta, :message, { default_order: :asc }) %>
+          <%= sort_link(skills_scope_meta, :created_at, { default_order: :asc }) %>
         </th>
 
-        <th>
-          <%= sort_link(contacts_scope_meta, :created_at, { default_order: :asc }) %>
-        </th>
-
-        <th colspan="1"></th>
+        <th colspan="2"></th>
       </tr>
       </thead>
 
       <tbody>
-      <% if contacts.present? %>
-        <%= render partial: "contacts/contact_row", collection: contacts, as: :contact, locals: { return_to: return_to } %>
+      <% if skills.present? %>
+        <%= render partial: "skills/skill_row", collection: skills, as: :skill, locals: { return_to: return_to } %>
       <% else %>
         <tr>
           <td colspan="6" class="text-center">
             <i class="fa fa-info-circle"></i>
-            <i><%= t('errors.resources.not_found', resource: humanize_model(contact_model, pluralize: true, titleize: false)) %></i>
+            <i><%= t('errors.resources.not_found', resource: humanize_model(skill_model, pluralize: true, titleize: false)) %></i>
           </td>
         </tr>
       <% end %>
