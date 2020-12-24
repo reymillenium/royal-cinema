@@ -27,6 +27,7 @@ Rails.application.routes.draw do
   end
 
   resources :contacts
+  resources :skills
 
   # The extra_pages view (extra)
   get 'pages', to: 'pages#index'

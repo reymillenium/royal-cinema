@@ -1,0 +1,50 @@
+en:
+  skills:
+    title: 'Skills'
+    nav: 'Skills'
+    short: 'Skills'
+    validation:
+      invalid: 'invalid'
+    report:
+      tab: 'Skills Report'
+      nav: 'Skills Report'
+      title: 'Skills Report'
+    export:
+      to_csv: 'Export to CSV'
+    responses:
+      clone:
+        success: "The %{resource} has been successfully cloned"
+        error: "The %{resource} can't be cloned}"
+      exporting_action:
+        success: 'The Report of %{resource} has been successfully exported to the csv file: "%{file_name}"'
+        error: "It was not possible to export to a csv file the Report of %{resource}"
+    column_header_labels:
+      title: "Name"
+      body: "Body"
+      created_at: "Created At"
+      updated_at: "Updated At"
+    new:
+      header: 'New Skill'
+      button_title: 'New'
+    create:
+      header: 'Create Skill'
+      success_notice: "Skill was successfully created."
+    update:
+      header: 'Edit Skill'
+      success_notice: "Skill was successfully updated."
+    details:
+      header: 'Skill Details'
+    edit:
+      header: "Edit Skill"
+    destroy:
+      success_notice: "The Skill was successfully destroyed."
+    clone:
+      success_notice: "The Skill with the title: '%{resource}' was successfully cloned."
+    send:
+      success_notice: "The Skill was sent successfully."
+    download_contact:
+      errors:
+        wrong_password: "The Skill by the name of '%{resource}' has the wrong password."
+
+    form:
+
