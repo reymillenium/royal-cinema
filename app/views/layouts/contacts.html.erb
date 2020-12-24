@@ -45,14 +45,19 @@
       <div class="sb-sidenav-menu">
         <div class="nav">
           <div class="sb-sidenav-menu-heading">Dashboard</div>
+          <%= link_to pages_path, class: 'nav-link' do %>
+            <div class="sb-nav-link-icon"><i class="fas fa-briefcase"></i></div>
+            Portfolio
+          <% end %>
+
           <%= link_to contacts_path, class: 'nav-link' do %>
             <div class="sb-nav-link-icon"><i class="fas fa-envelope"></i></div>
             Contacts
           <% end %>
 
-          <%= link_to pages_path, class: 'nav-link' do %>
-            <div class="sb-nav-link-icon"><i class="fas fa-briefcase"></i></div>
-            Portfolio
+          <%= link_to skills_path, class: 'nav-link' do %>
+            <div class="sb-nav-link-icon"><i class="fas fa-cogs"></i></div>
+            Skills
           <% end %>
         </div>
       </div>

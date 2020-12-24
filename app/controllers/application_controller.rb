@@ -4,6 +4,8 @@ class ApplicationController < ActionController::Base
 
   layout :layout_by_resource
 
+  ADMIN_RESOURCES = %w[contacts skills]
+
   protect_from_forgery
   # before_action :authenticate_user!
 
@@ -11,7 +13,7 @@ class ApplicationController < ActionController::Base
   def layout_by_resource
     if devise_controller?
       'login'
-    elsif controller_name == 'contacts'
+    elsif ADMIN_RESOURCES.include?(controller_name)
       'contacts'
     else
       'application'
