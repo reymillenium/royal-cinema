@@ -2,6 +2,7 @@
   contact_model = Contact
   contact = local_assigns.fetch(:contact, Contact.new)
   return_to = local_assigns.fetch(:return_to, request.fullpath)
+  skills_all = Skill.all
 %>
 
 <!-- about -->
@@ -453,6 +454,30 @@
   </div>
 </div>
 <!-- //services -->
+
+<!-- stats2 -->
+<div class="stats wthree-sub" id="skills">
+  <div class="container">
+    <h3 class="w3l-title">&nbsp;My Skills</h3>
+
+    <% skills_all.each_slice(3) do |skills_slice| %>
+      <div class="row">
+        <% skills_slice.each do |skill| %>
+          <div class="col-sm-4 stats_grid_right">
+            <div class="skillbar" data-percent="<%= skill.percentage %>">
+              <span class="skillbar-title" style="background: <%= skill.color %>;"><small><%= skill.name %></small></span>
+              <p class="skillbar-bar" style="background: <%= skill.color %>;"></p>
+              <span class="skill-bar-percent"></span>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+
+    <div class="clearfix"></div>
+  </div>
+</div>
+<!-- //stats2 -->
 
 <!-- interests -->
 <div class="intra-w3l" id="interests">
