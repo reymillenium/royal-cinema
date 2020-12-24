@@ -466,9 +466,7 @@
           <div class="col-sm-4 stats_grid_right">
             <div class="skillbar" data-percent="<%= skill.percentage %>">
               <span class="skillbar-title" style="background: <%= skill.color %>;"><small><%= "#{skill.name.gsub(" ", "&nbsp;")}".html_safe %></small></span>
-<!--              <span class="skillbar-title" style="background: <%#= "##{SecureRandom.hex(3)}" %>;"><small><%#= "#{skill.name.gsub!(" ", "&nbsp;")}".html_safe %></small></span>-->
-<!--              <p class="skillbar-bar" style="background: <%#= skill.color %>;"></p>-->
-              <p class="skillbar-bar" style="background: <%= "##{SecureRandom.hex(3)}" %>;"></p>
+              <p class="skillbar-bar" style="background: <%= skill.color %>;"></p>
               <span class="skill-bar-percent"></span>
             </div>
           </div>
