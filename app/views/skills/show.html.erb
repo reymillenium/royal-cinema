@@ -16,6 +16,11 @@
       <i class="fa fa-times fa-fw" aria-hidden="true"></i>
       Delete Skill
     <% end %>
+
+    <%= link_to edit_skill_path(@skill, return_to: skill_path(@skill)), class: "btn btn-success btn-sm", data: { toggle: 'tooltip', placement: 'top' }, title: t('actions.edit') do %>
+      <i class="fa fa-pencil-alt fa-fw" aria-hidden="true"></i>
+      Edit Skill
+    <% end %>
   </div>
 
   <div class="card-body">
