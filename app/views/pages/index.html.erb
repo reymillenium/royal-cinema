@@ -161,7 +161,7 @@
       <!-- End Skill Bar -->
 
       <div class="skillbar" data-percent="76">
-        <span class="skillbar-title" style="background: #a0d034;"><small>To add</small></span>
+        <span class="skillbar-title" style="background: #a0d034;"><small>To&nbsp;add</small></span>
         <p class="skillbar-bar" style="background: #b2ec2f;"></p>
         <span class="skill-bar-percent"></span>
       </div>
@@ -465,8 +465,10 @@
         <% skills_slice.each do |skill| %>
           <div class="col-sm-4 stats_grid_right">
             <div class="skillbar" data-percent="<%= skill.percentage %>">
-              <span class="skillbar-title" style="background: <%= skill.color %>;"><small><%= skill.name %></small></span>
-              <p class="skillbar-bar" style="background: <%= skill.color %>;"></p>
+              <span class="skillbar-title" style="background: <%= skill.color %>;"><small><%= "#{skill.name.gsub(" ", "&nbsp;")}".html_safe %></small></span>
+<!--              <span class="skillbar-title" style="background: <%#= "##{SecureRandom.hex(3)}" %>;"><small><%#= "#{skill.name.gsub!(" ", "&nbsp;")}".html_safe %></small></span>-->
+<!--              <p class="skillbar-bar" style="background: <%#= skill.color %>;"></p>-->
+              <p class="skillbar-bar" style="background: <%= "##{SecureRandom.hex(3)}" %>;"></p>
               <span class="skill-bar-percent"></span>
             </div>
           </div>
@@ -1057,7 +1059,8 @@
       <div class="accordion">
         <div class="accordion-section">
           <h5><a class="accordion-section-title" href="#accordion-4">
-            <span>May 7<sup><small>th</small></sup>, 2020</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Alvaro E. Escobar
+            <span>May 7<sup><small>th</small></sup>, 2020</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Alvaro E.
+            Escobar
             <i class="glyphicon glyphicon-chevron-down"></i>
           </a></h5>
           <div id="accordion-4" class="accordion-section-content">
