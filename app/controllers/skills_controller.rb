@@ -25,7 +25,7 @@ class SkillsController < ApplicationController
     @skill = skill_service.build_skill(skill_params)
 
     if @skill.save
-      redirect_notice = t('skills.send.success_notice')
+      redirect_notice = t('skills.create.success_notice')
       redirect_to @return_to, notice: redirect_notice
     else
       flash[:alert] = @skill.errors.full_messages.first

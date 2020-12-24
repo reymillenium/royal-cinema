@@ -1,4 +1,4 @@
-class ContactService
+class SkillService
   extend SkillsHelper
 
   # Params not desired to build/update a skill object
