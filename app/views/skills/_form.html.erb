@@ -2,27 +2,32 @@
   skill_model = Skill
   skill = local_assigns.fetch(:skill, Skill.new)
   return_to = local_assigns.fetch(:return_to, request.fullpath)
+  color_value = (skill.persisted? ? skill.color : "##{SecureRandom.hex(3)}")
 %>
 
 <div class="card-body">
   <%= form_with(model: skill, local: true) do |form| %>
     <%= hidden_field_tag :return_to, return_to %>
 
-    <div class="form-group">
-      <%= form.label :name, humanize_attribute(skill_model, :name), class: 'small mb-1' %>
-      <%= form.text_field :name, class: 'form-control py-4', autofocus: true, autocomplete: "title", placeholder: 'Enter the name' %>
-    </div>
-
-    <div class="form-group">
-      <%= form.label :color, humanize_attribute(skill_model, :color), class: 'small mb-1' %>
-      <%= form.text_field :color, value: (skill.persisted? ? skill.color : "##{SecureRandom.hex(3)}"), class: 'form-control py-4', autofocus: true, autocomplete: "title", placeholder: 'Enter the color' %>
+    <div class="form-row">
+      <div class="col-md-6">
+        <div class="form-group">
+          <%= form.label :name, humanize_attribute(skill_model, :name), class: 'small mb-1' %>
+          <%= form.text_field :name, class: 'form-control py-4', autofocus: true, autocomplete: "name", placeholder: 'Enter the name' %>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <%= form.label :color, humanize_attribute(skill_model, :color), class: 'small mb-1' %>
+          <%= form.color_field :color, value: color_value, style: "width: 100%; height: 50px;", input_html: { class: 'colorpicker' } %>
+        </div>
+      </div>
     </div>
 
     <div class="form-group">
       <%= form.label :percentage, humanize_attribute(skill_model, :percentage), class: 'small mb-1' %>
       <%= form.text_field :percentage, class: 'form-control py-4', autofocus: true, autocomplete: "title", placeholder: 'Enter the percentage' %>
     </div>
-
 
     <div class="form-group d-flex align-items-center justify-content-between mt-4 mb-0">
       <div class="actions">
