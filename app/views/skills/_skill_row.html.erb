@@ -11,9 +11,7 @@
   </td>
 
   <td>
-    <div class="nowrap">
-      <%= skill.color %>
-    </div>
+    <%= content_tag(:div, skill.color, class: "badge", style: "color: white; background: #{skill.color};") %>
   </td>
 
   <td>
