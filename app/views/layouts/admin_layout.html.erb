@@ -44,20 +44,26 @@
     <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
       <div class="sb-sidenav-menu">
         <div class="nav">
-          <div class="sb-sidenav-menu-heading">Dashboard</div>
+          <div class="sb-sidenav-menu-heading">Public</div>
           <%= link_to pages_path, class: 'nav-link' do %>
             <div class="sb-nav-link-icon"><i class="fas fa-briefcase"></i></div>
             Portfolio
           <% end %>
 
-          <%= link_to contacts_path, class: 'nav-link' do %>
+          <div class="sb-sidenav-menu-heading">Dashboard</div>
+          <%= link_to references_path, class: 'nav-link' do %>
             <div class="sb-nav-link-icon"><i class="fas fa-envelope"></i></div>
-            Messages
+            References
           <% end %>
 
           <%= link_to skills_path, class: 'nav-link' do %>
             <div class="sb-nav-link-icon"><i class="fas fa-cogs"></i></div>
             Skills
+          <% end %>
+
+          <%= link_to contacts_path, class: 'nav-link' do %>
+            <div class="sb-nav-link-icon"><i class="fas fa-paper-plane"></i></div>
+            Messages
           <% end %>
         </div>
       </div>
