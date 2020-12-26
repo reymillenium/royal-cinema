@@ -1,34 +1,42 @@
 <%
   return_to = local_assigns.fetch(:return_to, request.fullpath)
   reference = local_assigns.fetch(:reference)
-  body_truncate_length = 160
-  body_text = text_from_reference(reference)
 %>
 
 <tr>
   <td>
     <div class="nowrap">
-      <%= link_to reference.title, reference_path(reference) %>
+      <%= link_to reference.full_name, reference_path(reference) %>
     </div>
   </td>
+
   <td>
     <div class="nowrap">
-      <% popover_data = body_text.length > body_truncate_length ? { toggle: :popover, trigger: :hover, title: t('references.column_header_labels.body'), content: reference.body.body.to_s, placement: :left, html: true } : {} %>
-      <%= content_tag :div, data: popover_data do %>
-        <%= truncate(body_text, length: body_truncate_length) %>
-      <% end %>
+      <%= reference.current_job_title %>
+    </div>
+  </td>
+
+  <td>
+    <div class="nowrap">
+      <%= reference.linkedin_profile %>
+    </div>
+  </td>
+
+  <td>
+    <div class="nowrap">
+      <%= reference.mobile_number %>
+    </div>
+  </td>
+
+  <td>
+    <div class="nowrap">
+      <%= if_applicable(reference.pertinent_date.present? ? l(reference.pertinent_date) : nil, titleize: false) %>
     </div>
   </td>
 
   <td>
     <div class="nowrap">
       <%= if_applicable(reference.created_at.present? ? l(reference.created_at) : nil, titleize: false) %>
-    </div>
-  </td>
-
-  <td>
-    <div class="nowrap">
-      <%= if_applicable(reference.updated_at.present? ? l(reference.updated_at) : nil, titleize: false) %>
     </div>
   </td>
 

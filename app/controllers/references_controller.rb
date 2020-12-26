@@ -24,7 +24,7 @@ class ReferencesController < ApplicationController
   def create
     @reference = reference_service.build_reference(reference_params)
 
-    if verify_recaptcha(model: @reference) && @reference.save
+    if @reference.save
       redirect_notice = t('references.send.success_notice')
       redirect_to @return_to, notice: redirect_notice
     else
@@ -60,7 +60,7 @@ class ReferencesController < ApplicationController
   end
 
   def set_reference
-    @reference = reference.all.find(params[:id])
+    @reference = Reference.all.find(params[:id])
   end
 
   # Only allow a list of trusted parameters through.
