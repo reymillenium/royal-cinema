@@ -33,13 +33,13 @@
   </td>
 
   <td class="nowrap">
-    <%= link_to download_reference_as_word_reference_path(reference), class: "btn btn-sm", download: reference.title, data: { toggle: 'tooltip', placement: 'top' }, title: t('actions.download') do %>
-      <i class="fa fa-download fa-fw" aria-hidden="true"></i>
-    <% end %>
+    <%#= link_to download_reference_as_word_reference_path(reference), class: "btn btn-sm", download: reference.title, data: { toggle: 'tooltip', placement: 'top' }, title: t('actions.download') do %>
+<!--      <i class="fa fa-download fa-fw" aria-hidden="true"></i>-->
+    <%# end %>
 
-    <%= link_to clone_reference_path(reference), class: "btn btn-sm", data: { toggle: 'tooltip', placement: 'top' }, title: t('actions.clone') do %>
-      <i class="fa fa-clone fa-fw" aria-hidden="true"></i>
-    <% end %>
+    <%#= link_to clone_reference_path(reference), class: "btn btn-sm", data: { toggle: 'tooltip', placement: 'top' }, title: t('actions.clone') do %>
+<!--      <i class="fa fa-clone fa-fw" aria-hidden="true"></i>-->
+    <%# end %>
 
     <%= link_to edit_reference_path(reference, return_to: references_path), class: "btn btn-sm", data: { toggle: 'tooltip', placement: 'top' }, title: t('actions.edit') do %>
       <i class="fa fa-pencil-alt fa-fw" aria-hidden="true"></i>

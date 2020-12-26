@@ -1,9 +1,9 @@
 class ReferencesController < ApplicationController
   include CommonControl
 
-  before_action :authenticate_user!, only: %i[index show destroy]
-  before_action :set_reference, only: %i[show destroy]
-  before_action :update_concerned_path, only: [:create]
+  before_action :authenticate_user!
+  before_action :set_reference, only: %i[show edit update destroy]
+  before_action :update_concerned_path, only: [:new, :create, :edit, :update]
 
   def index
     references_scope = Reference.all
@@ -14,11 +14,30 @@ class ReferencesController < ApplicationController
 
   def show; end
 
+  def new
+    @reference = Reference.new
+  end
+
+  def edit
+  end
+
   def create
     @reference = reference_service.build_reference(reference_params)
 
     if verify_recaptcha(model: @reference) && @reference.save
       redirect_notice = t('references.send.success_notice')
+      redirect_to @return_to, notice: redirect_notice
+    else
+      flash[:alert] = @reference.errors.full_messages.first
+      redirect_to @return_to
+    end
+  end
+
+  def update
+    @reference = reference_service.update_reference(reference_params.merge(id: params.fetch(:id)))
+
+    if @reference.save
+      redirect_notice = t('references.update.success_notice')
       redirect_to @return_to, notice: redirect_notice
     else
       flash[:alert] = @reference.errors.full_messages.first
@@ -46,6 +65,6 @@ class ReferencesController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def reference_params
-    params.fetch(:reference, {}).permit(:full_name, :current_job_title, :linkedin_profile, :mobile_number, :letter)
+    params.fetch(:reference, {}).permit(:full_name, :current_job_title, :linkedin_profile, :mobile_number, :pertinent_date, :letter)
   end
 end
