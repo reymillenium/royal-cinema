@@ -9,13 +9,13 @@ class ApplicationController < ActionController::Base
   protect_from_forgery
   # before_action :authenticate_user!
 
-
   def layout_by_resource
     if devise_controller?
       'login'
     elsif ADMIN_RESOURCES.include?(controller_name)
-      'contacts'
-    else # For pages_controller (The visible website for any person, at pages/index)
+      'admin_layout'
+    else
+      # For pages_controller (The visible website for any person, at pages/index)
       'application'
     end
   end
