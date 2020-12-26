@@ -1067,19 +1067,10 @@
       <div class="accordion">
 
         <% references_all.each do |reference| %>
-          <!--          <div class="col-sm-4 stats_grid_right">-->
-          <!--            <div class="skillbar" data-percent="<%#= skill.percentage %>">-->
-          <!--              <span class="skillbar-title" style="background: <%#= skill.color %>;"><small><%#= "#{skill.name.gsub(" ", "&nbsp;")}".html_safe %></small></span>-->
-          <!--              <p class="skillbar-bar" style="background: <%#= skill.color %>;"></p>-->
-          <!--              <span class="skill-bar-percent"></span>-->
-          <!--            </div>-->
-          <!--          </div>-->
-
-
           <div class="accordion-section">
             <h5>
               <a class="accordion-section-title" href="#accordion-references-<%= reference.id.to_s %>">
-                <span><%= reference.pertinent_date %></span><%= reference.full_name %>
+                <span><%= reference.pertinent_date.strftime(I18n.t('date.formats.long')) %></span><%= reference.full_name %>
                 <i class="glyphicon glyphicon-chevron-down"></i>
               </a>
             </h5>
