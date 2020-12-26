@@ -1,3 +1,5 @@
+// ActionText Trix Editor styling (must be on the top):
+//= require actiontext
 
 $fa-font-path: '@fortawesome/fontawesome-free/webfonts';
 @import '@fortawesome/fontawesome-free/scss/fontawesome';
@@ -6,16 +8,9 @@ $fa-font-path: '@fortawesome/fontawesome-free/webfonts';
 @import '@fortawesome/fontawesome-free/scss/brands';
 @import '@fortawesome/fontawesome-free/scss/v4-shims';
 
-// ActionText Trix Editor styling:
-//= require actiontext
 
 // To style the action buttons for the TrixEditor on the References
 @import "action_buttons_style";
-
-
-
-
-
 
 
 
