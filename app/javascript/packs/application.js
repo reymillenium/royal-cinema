@@ -40,3 +40,5 @@ import './skill.bars.jquery'
 require("./lightbox")
 
 
+// Added when I executed on the terminal: rails webpacker:install:stimulus
+import "controllers"
