@@ -75,6 +75,26 @@
     </div>
 
     <!-- Details Row # 3: -->
+    <div class="form-row">
+      <div class="col-md-6">
+        <!-- <div class="form-group">-->
+        <%#= form.label :pertinent_date, humanize_attribute(reference_model, :pertinent_date), class: 'small mb-1' %>
+        <%#= form.text_field :pertinent_date, class: 'form-control py-4', autofocus: true, autocomplete: "pertinent_date", placeholder: 'Enter the pertinent date', data: { behavior: "flatpickr" } %>
+        <!-- </div>-->
+
+
+        <div class="form-group">
+          <label class="small mb-1">
+            Pertinent date:
+          </label>
+          <div class="form-control" style="height: 50px; vertical-align: middle !important; padding-top: 12px;">
+            <%= if_applicable @reference.pertinent_date, titleize: false %>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Details Row # 4: -->
     <div class="form-group">
       <label class="small mb-1">
         Letter:
