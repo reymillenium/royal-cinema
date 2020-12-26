@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
 
   layout :layout_by_resource
 
-  ADMIN_RESOURCES = %w[contacts skills]
+  ADMIN_RESOURCES = %w[contacts skills references]
 
   protect_from_forgery
   # before_action :authenticate_user!
@@ -15,7 +15,7 @@ class ApplicationController < ActionController::Base
       'login'
     elsif ADMIN_RESOURCES.include?(controller_name)
       'contacts'
-    else
+    else # For pages_controller (The visible website for any person, at pages/index)
       'application'
     end
   end
