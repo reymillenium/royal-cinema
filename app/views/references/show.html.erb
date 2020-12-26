@@ -1,0 +1,48 @@
+<br>
+<h1 class="mt-4"><%= t("notes.details.header") %></h1>
+
+<ol class="breadcrumb mb-4 hidden-print">
+  <li>
+    <%= link_to notes_path do %>
+      <%= t('notes.nav') %>
+    <% end %>
+  </li> &nbsp;/&nbsp;
+  <li class="active"> <%= t('notes.details.header') %></li>
+</ol>
+
+<div class="card mb-4">
+  <div class="card-header">
+    <%= link_to edit_note_path(@note, return_to: note_path(@note)), class: "btn btn-success btn-sm", data: { toggle: 'tooltip', placement: 'top' }, title: t('actions.edit') do %>
+      <i class="fa fa-pencil-alt fa-fw" aria-hidden="true"></i>
+      Edit Note
+    <% end %>
+  </div>
+
+  <div class="card-body">
+    <!-- Details Row # 1:  -->
+    <div class="form-group">
+      <label class="small mb-1">
+        Title:
+      </label>
+      <div class="form-control" style="height: 50px; vertical-align: middle !important; padding-top: 12px;">
+        <%= if_applicable @note.title, titleize: false %>
+      </div>
+    </div>
+
+    <!-- Separation Row: Makes this partial more similar to the edit/new form  -->
+    <div class="form-group"></div>
+
+    <!-- Details Row # 2: -->
+    <div class="form-group">
+      <label class="small mb-1">
+        Body:
+      </label>
+      <div class="form-control-static">
+        <%= @note.body %>
+      </div>
+    </div>
+
+    <!-- Separation Row: Makes this partial more similar to the edit/new form  -->
+    <div class="form-group"></div>
+  </div>
+</div>
