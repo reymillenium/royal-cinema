@@ -38,7 +38,6 @@
       </div>
     </div>
 
-
     <div class="form-group">
       <%= form.label :letter, humanize_attribute(reference_model, :letter), class: "small mb-1" %>
       <%= form.rich_text_area :letter, class: "form-control py-4", autofocus: true, disabled: false %>
@@ -58,4 +57,9 @@
     document.addEventListener("trix-file-accept", function (event) {
         event.preventDefault();
     });
+
+    // $(document).ready(function () {
+    //     $('.datepicker').pickadate();
+    // });
+
 </script>
