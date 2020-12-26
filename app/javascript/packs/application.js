@@ -46,3 +46,18 @@ import "controllers"
 // Added when I executed on the terminal: rails action_text:install
 require("trix")
 require("@rails/actiontext")
+
+//For the Flatpicker components:
+import flatpickr from "flatpickr";
+
+require("flatpickr/dist/flatpickr.css")
+
+document.addEventListener("turbolinks:load", () => {
+    flatpickr("[data-behavior='flatpickr']", {
+        altInput: true,
+        altFormat: "F j, Y",
+        dateFormat: "Y-m-d"
+    })
+});
+
+
