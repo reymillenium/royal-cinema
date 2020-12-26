@@ -92,6 +92,16 @@
           </div>
         </div>
       </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <label class="small mb-1">
+            Email:
+          </label>
+          <div class="form-control" style="height: 50px; vertical-align: middle !important; padding-top: 12px;">
+            <%= if_applicable @reference.email, titleize: false %>
+          </div>
+        </div>
+      </div>
     </div>
 
     <!-- Details Row # 4: -->

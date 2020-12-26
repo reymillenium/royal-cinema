@@ -30,6 +30,12 @@
 
   <td>
     <div class="nowrap">
+      <%= reference.email %>
+    </div>
+  </td>
+
+  <td>
+    <div class="nowrap">
       <%= if_applicable(reference.pertinent_date.present? ? l(reference.pertinent_date) : nil, titleize: false) %>
     </div>
   </td>

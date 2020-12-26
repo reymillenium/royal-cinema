@@ -65,6 +65,6 @@ class ReferencesController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def reference_params
-    params.fetch(:reference, {}).permit(:full_name, :current_job_title, :linkedin_profile, :mobile_number, :pertinent_date, :letter)
+    params.fetch(:reference, {}).permit(:full_name, :current_job_title, :linkedin_profile, :mobile_number, :pertinent_date, :email, :letter)
   end
 end

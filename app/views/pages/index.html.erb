@@ -1066,43 +1066,43 @@
     <div class="col-md-12 abt-left">
       <div class="accordion">
 
-
         <% references_all.each do |reference| %>
-
-<!--          <div class="col-sm-4 stats_grid_right">-->
-<!--            <div class="skillbar" data-percent="<%#= skill.percentage %>">-->
-<!--              <span class="skillbar-title" style="background: <%#= skill.color %>;"><small><%#= "#{skill.name.gsub(" ", "&nbsp;")}".html_safe %></small></span>-->
-<!--              <p class="skillbar-bar" style="background: <%#= skill.color %>;"></p>-->
-<!--              <span class="skill-bar-percent"></span>-->
-<!--            </div>-->
-<!--          </div>-->
+          <!--          <div class="col-sm-4 stats_grid_right">-->
+          <!--            <div class="skillbar" data-percent="<%#= skill.percentage %>">-->
+          <!--              <span class="skillbar-title" style="background: <%#= skill.color %>;"><small><%#= "#{skill.name.gsub(" ", "&nbsp;")}".html_safe %></small></span>-->
+          <!--              <p class="skillbar-bar" style="background: <%#= skill.color %>;"></p>-->
+          <!--              <span class="skill-bar-percent"></span>-->
+          <!--            </div>-->
+          <!--          </div>-->
 
 
           <div class="accordion-section">
             <h5>
-              <a class="accordion-section-title" href="#accordion-4">
-                <span>May 7<sup><small>th</small></sup>, 2020</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Alvaro E.
-                Escobar
+              <a class="accordion-section-title" href="#accordion-references-<%= reference.id.to_s %>">
+                <span><%= reference.pertinent_date %></span><%= reference.full_name %>
                 <i class="glyphicon glyphicon-chevron-down"></i>
               </a>
             </h5>
-            <div id="accordion-4" class="accordion-section-content">
-              <h6>Systems Engineer / Web Developer</h6>
+            <div id="accordion-references-<%= reference.id.to_s %>" class="accordion-section-content">
+              <h6><%= reference.current_job_title %></h6>
               <ul>
-                <li>
-                  <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-                  <%= link_to "https://www.linkedin.com/in/alvaroescobar/", class: "alvaro_linkedin", target: '_alvaro_linkedin' do %>
-                    <strong>Linkedin Profile: </strong>https://www.linkedin.com/in/alvaroescobar/
-                  <% end %>
-                </li>
+                <% if reference.linkedin_profile.present? %>
+                  <li>
+                    <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                    <%= link_to "#{reference.linkedin_profile}", class: "#{reference.full_name.delete(' ').delete('.')}_linkedin", target: "_#{reference.full_name.delete(' ').delete('.')}_linkedin" do %>
+                      <strong>Linkedin Profile: </strong><%= reference.linkedin_profile %>
+                    <% end %>
+                  </li>
+                <% end %>
 
                 <% if reference.email.present? %>
-                <li>
-                  <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-                  <%= mail_to "alvaroescobaronline@gmail.com", class: "alvaro_email", target: '_alvaro_email' do %>
-                    <strong>Email: </strong>alvaroescobaronline@gmail.com
-                  <% end %>
-                </li>
+                  <li>
+                    <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                    <%= mail_to "#{reference.email}", class: "#{reference.full_name.delete(' ').delete('.')}_email", target: "_#{reference.full_name.delete(' ').delete('.')}_email" do %>
+                      <strong>Email: </strong><%= reference.email %>
+                    <% end %>
+                  </li>
+                <% end %>
 
                 <% if reference.mobile_number.present? %>
                   <li>
@@ -1110,288 +1110,17 @@
                     <strong>Mobile: </strong><%= reference.mobile_number %>
                   </li>
                 <% end %>
-
-
               </ul>
 
               <br>
 
               <div style="text-indent: 0 !important; text-align: justify;">
-                <%= reference.pertinent_date %>
+                <%= reference.letter %>
               </div>
             </div>
           </div>
         <% end %>
 
-
-
-
-
-
-
-        <div class="accordion-section">
-          <h5><a class="accordion-section-title" href="#accordion-4">
-            <span>May 7<sup><small>th</small></sup>, 2020</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Alvaro E.
-            Escobar
-            <i class="glyphicon glyphicon-chevron-down"></i>
-          </a></h5>
-          <div id="accordion-4" class="accordion-section-content">
-            <h6>Systems Engineer / Web Developer</h6>
-            <ul>
-              <li>
-                <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-                <%= link_to "https://www.linkedin.com/in/alvaroescobar/", class: "alvaro_linkedin", target: '_alvaro_linkedin' do %>
-                  <strong>Linkedin Profile: </strong>https://www.linkedin.com/in/alvaroescobar/
-                <% end %>
-              </li>
-
-              <li>
-                <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-                <%= mail_to "alvaroescobaronline@gmail.com", class: "alvaro_email", target: '_alvaro_email' do %>
-                  <strong>Email: </strong>alvaroescobaronline@gmail.com
-                <% end %>
-              </li>
-
-              <li>
-                <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-                <strong>Mobile: </strong>+1 (954) 600-6299
-              </li>
-            </ul>
-
-            <br>
-
-            <div style="text-indent: 0 !important; text-align: justify;">
-              <p> To Whom It May Concern:</p>
-              <br>
-              <p>
-                Reinier Garcia was employed in the position of Software Engineer at Kipu Health. During his tenure, his
-                primary duties included architecting, analyzing and developing projects as they pertained to our
-                web-based
-                application.
-              </p>
-              <br>
-              <p>
-                During his tenure, Reinier’s development contributions tremendously impacted the success of our flagship
-                application. His vast knowledge, research and results are not only worthy of merit, but exemplary.
-                Reinier’s
-                projects were meticulously architected and executed with flawless efficiency. Not only was Reinier
-                successful in delivering these projects but more importantly they were elegantly documented, unit tested
-                and
-                delivered in a timely manner.
-              </p>
-              <br>
-              <p>
-                Reinier is respected both in a technical and professional manner not only by me, but by many of his
-                colleagues. His dedication is unquestionable, his resolve undaunted and his results impeccable. He has
-                been
-                instrumental for us not only in the tasks of development, but his professional experiences and
-                commanding
-                of
-                object oriented programming is where his contributions were benefited from most.
-              </p>
-              <br>
-              <p>
-                Reinier Garcia is an impressive individual. He will immediately become a quintessential asset to any
-                company
-                and it is for these reasons that I recommend him for any position within your organization. Please feel
-                free
-                to contact me at any time to if you would like to discuss further.
-              </p>
-              <br>
-              <p>
-                Sincerely,
-              </p>
-              <br>
-              <p>
-                -Alvaro Escobar
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div class="accordion-section">
-          <h5><a class="accordion-section-title" href="#accordion-5">
-            <span>April 2<sup><small>nd</small></sup>, 2020</span>&nbsp;&nbsp;&nbsp;&nbsp;Allen Penate
-            <i class="glyphicon glyphicon-chevron-down"></i>
-          </a></h5>
-          <div id="accordion-5" class="accordion-section-content">
-            <h6>Senior Software Engineer</h6>
-            <ul>
-              <li>
-                <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-                <%= link_to "https://www.linkedin.com/in/allen-penate/", class: "allen_penate_linkedin", target: '_allen_penate_linkedin' do %>
-                  <strong>Linkedin Profile: </strong>https://www.linkedin.com/in/allen-penate/
-                <% end %>
-              </li>
-
-              <li>
-                <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-                <%= mail_to "allenson@gmail.com", class: "allen_penate_email", target: '_allen_penate_email' do %>
-                  <strong>Email: </strong>allenson@gmail.com
-                <% end %>
-              </li>
-
-              <li>
-                <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-                <strong>Mobile: </strong>+1 (786) 303-6210
-              </li>
-            </ul>
-
-            <br>
-
-            <div style="text-indent: 0 !important; text-align: justify;">
-              <p>
-                Reinier is a talented FullStack Senior Software Engineer. He joined our team a little over a year ago. I
-                was amazed how in such short period, he managed himself in mastering a complex business and assimilate
-                technologies and tools that were not part of his field of expertise at that time, to the point of being
-                much more productive and efficient than other colleagues with more years of seniority in our field.
-              </p>
-              <br>
-              <p>
-                He fully masters all facets of Software Engineering, has a solid background of programming principles
-                and patterns, is skilled and super productive in the way of writing code, capable of assimilating new
-                technologies in record time.
-              </p>
-              <br>
-              <p>
-                One of his most outstanding qualities is the ability to be 100% focused on what needs to be done. He can
-                accomplish any given task efficiently and in record speed. His tenacity, sacrifice, professionalism are
-                a source of inspiration for me and the rest of the team members. It's been a joy and a real pleasure to
-                work next to him all this time.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div class="accordion-section">
-          <h5><a class="accordion-section-title" href="#accordion-6">
-            <span>March 29<sup><small>th</small></sup>, 2020</span>Mario Enrique Sanchez
-            <i class="glyphicon glyphicon-chevron-down"></i>
-          </a></h5>
-          <div id="accordion-6" class="accordion-section-content">
-            <h6>Senior Software Engineer & Architect. Tech lead</h6>
-            <ul>
-              <li>
-                <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-                <%= link_to "https://www.linkedin.com/in/mario-enrique", class: "mario_enrique_linkedin", target: '_mario_enrique_linkedin' do %>
-                  <strong>Linkedin Profile: </strong>https://www.linkedin.com/in/mario-enrique/
-                <% end %>
-              </li>
-
-              <li>
-                <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-                <%= mail_to "mario.enriquesm@gmail.com", class: "mario_enrique_email", target: '_mario_enrique_email' do %>
-                  <strong>Email: </strong>mario.enriquesm@gmail.com
-                <% end %>
-              </li>
-
-              <li>
-                <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-                <strong>Mobile: </strong>+1 (305) 834-0651
-              </li>
-            </ul>
-
-            <br>
-
-            <div style="text-indent: 0 !important; text-align: justify;">
-              <p>
-                Reinier is a self-motivated developer. His work ethic, computer science background, and eager learner
-                aptitude make him one the most productive team members. He has been vital in maintaining and refactor
-                existing solutions while we transition to newer projects. Kudos Reinier, for your loyalty and
-                dedication.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div class="accordion-section">
-          <h5><a class="accordion-section-title" href="#accordion-7">
-            <span>March 29<sup><small>th</small></sup>, 2020</span>Omar Stumpfs
-            <i class="glyphicon glyphicon-chevron-down"></i>
-          </a></h5>
-          <div id="accordion-7" class="accordion-section-content">
-            <h6>Ruby on Rails Developer</h6>
-            <ul>
-              <li>
-                <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-                <%= link_to "https://www.linkedin.com/in/omar-stumpfs-77128698/", class: "omar_stumpfs_linkedin", target: '_omar_stumpfs_linkedin' do %>
-                  <strong>Linkedin Profile: </strong>https://www.linkedin.com/in/omar-stumpfs-77128698/
-                <% end %>
-              </li>
-
-              <li>
-                <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-                <%= mail_to "ostumpfs@gmail.com", class: "omar_stumpfs_email", target: '_omar_stumpfs_email' do %>
-                  <strong>Email: </strong>ostumpfs@gmail.com
-                <% end %>
-              </li>
-            </ul>
-
-            <br>
-
-            <div style="text-indent: 0 !important; text-align: justify;">
-              <p>
-                Reinier is an outstanding developer and colleague. Although we worked in different groups I have seen
-                him being hard-working and very ambitious, he is very skilled and eager to solve problems in the best
-                way possible; he is a pleasure to work with.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div class="accordion-section">
-          <h5><a class="accordion-section-title" href="#accordion-8">
-            <span>March 29<sup><small>th</small></sup>, 2020</span>Angel Hueso
-            <i class="glyphicon glyphicon-chevron-down"></i>
-          </a></h5>
-          <div id="accordion-8" class="accordion-section-content">
-            <h6>Software Engineer at Kipu Systems</h6>
-            <ul>
-              <li>
-                <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-                <%= link_to "https://www.linkedin.com/in/angel-huezo-9b96b9/", class: "angel_hueso_linkedin", target: '_angel_hueso_linkedin' do %>
-                  <strong>Linkedin Profile: </strong>https://www.linkedin.com/in/angel-huezo-9b96b9/
-                <% end %>
-              </li>
-
-              <li>
-                <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-                <%= mail_to "angel.huezo@kipusystems.com", class: "angel_hueso_email", target: '_angel_hueso_email' do %>
-                  <strong>Email: </strong>angel.huezo@kipusystems.com
-                <% end %>
-              </li>
-
-              <li>
-                <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-                <strong>Mobile: </strong>+1 (305) 776-5964
-              </li>
-            </ul>
-
-            <br>
-
-            <div style="text-indent: 0 !important; text-align: justify;">
-              <p>
-                Reinier and I work at Kipu Health at present time. We work in different teams but we report to the same
-                team leader.
-              </p>
-              <br>
-              <p>
-                I’m always impressed with Reinier’s ability to write high quality code in a very short amount of time.
-                His productivity is amazing and his work ethic is beyond compare. From the moment he sits down at his
-                desk, he’s a non stop code-writing machine!
-              </p>
-              <br>
-              <p>
-                Working with Reinier is a real pleasure. No task is too complex or too large for him to tackle. His code
-                is smart, efficient and very effective.
-              </p>
-              <br>
-              <p>
-                I look forward to continue working with him in the future.
-              </p>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
   </div>
