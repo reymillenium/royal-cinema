@@ -5,6 +5,7 @@ class CreateReferences < ActiveRecord::Migration[6.0]
       t.string :current_job_title
       t.string :linkedin_profile
       t.string :mobile_number
+      t.datetime :pertinent_date
 
       t.timestamps
     end
