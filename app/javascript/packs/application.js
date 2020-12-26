@@ -42,3 +42,7 @@ require("./lightbox")
 
 // Added when I executed on the terminal: rails webpacker:install:stimulus
 import "controllers"
+
+// Added when I executed on the terminal: rails action_text:install
+require("trix")
+require("@rails/actiontext")
