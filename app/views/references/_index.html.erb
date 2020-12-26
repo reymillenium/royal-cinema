@@ -1,23 +1,23 @@
 <%
   return_to ||= local_assigns.fetch(:return_to, request.fullpath)
-  notes_scope_meta ||= nil
-  notes ||= nil
+  references_scope_meta ||= nil
+  references ||= nil
 %>
 
 <div class="card mb-4">
-  <%= render partial: "notes/index_toolbar", locals: {
+  <%= render partial: "references/index_toolbar", locals: {
       return_to: return_to,
-      notes_scope_meta: notes_scope_meta,
+      references_scope_meta: references_scope_meta,
       search_criteria: :title_or_action_text_rich_text_body_cont,
-      search_url: notes_path,
+      search_url: references_path,
       show_actions: false
   } %>
 
-  <%= render partial: "notes/notes_table", locals: {
+  <%= render partial: "references/references_table", locals: {
       return_to: return_to,
-      notes_scope_meta: notes_scope_meta,
-      notes: notes
+      references_scope_meta: references_scope_meta,
+      references: references
   } %>
 
-  <%= render partial: "notes/index_bottombar" %>
+  <%= render partial: "references/index_bottombar" %>
 </div>

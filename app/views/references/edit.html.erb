@@ -1,18 +1,18 @@
 <%
-  note = @note || Note.new
+  reference = @reference || Reference.new
   return_to = @return_to
 %>
 
 <br>
-<h1 class="mt-4"><%= t('notes.update.header') %></h1>
+<h1 class="mt-4"><%= t('references.update.header') %></h1>
 
 <ol class="breadcrumb mb-4 hidden-print">
   <li>
-    <%= link_to notes_path do %>
-      <%= t('notes.nav') %>
+    <%= link_to references_path do %>
+      <%= t('references.nav') %>
     <% end %>
   </li> &nbsp;/&nbsp;
-  <li class="active"> <%= t('notes.update.header') %></li>
+  <li class="active"> <%= t('references.update.header') %></li>
 </ol>
 
 <div class="card mb-4">
@@ -24,7 +24,7 @@
   </div>
 
   <%= render partial: 'form', locals: {
-      note: note,
+      reference: reference,
       return_to: return_to,
   } %>
 </div>

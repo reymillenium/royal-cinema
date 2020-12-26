@@ -1,0 +1,52 @@
+<%
+  return_to = local_assigns.fetch(:return_to, request.fullpath)
+  reference = local_assigns.fetch(:reference)
+  body_truncate_length = 160
+  body_text = text_from_reference(reference)
+%>
+
+<tr>
+  <td>
+    <div class="nowrap">
+      <%= link_to reference.title, reference_path(reference) %>
+    </div>
+  </td>
+  <td>
+    <div class="nowrap">
+      <% popover_data = body_text.length > body_truncate_length ? { toggle: :popover, trigger: :hover, title: t('references.column_header_labels.body'), content: reference.body.body.to_s, placement: :left, html: true } : {} %>
+      <%= content_tag :div, data: popover_data do %>
+        <%= truncate(body_text, length: body_truncate_length) %>
+      <% end %>
+    </div>
+  </td>
+
+  <td>
+    <div class="nowrap">
+      <%= if_applicable(reference.created_at.present? ? l(reference.created_at) : nil, titleize: false) %>
+    </div>
+  </td>
+
+  <td>
+    <div class="nowrap">
+      <%= if_applicable(reference.updated_at.present? ? l(reference.updated_at) : nil, titleize: false) %>
+    </div>
+  </td>
+
+  <td class="nowrap">
+    <%= link_to download_reference_as_word_reference_path(reference), class: "btn btn-sm", download: reference.title, data: { toggle: 'tooltip', placement: 'top' }, title: t('actions.download') do %>
+      <i class="fa fa-download fa-fw" aria-hidden="true"></i>
+    <% end %>
+
+    <%= link_to clone_reference_path(reference), class: "btn btn-sm", data: { toggle: 'tooltip', placement: 'top' }, title: t('actions.clone') do %>
+      <i class="fa fa-clone fa-fw" aria-hidden="true"></i>
+    <% end %>
+
+    <%= link_to edit_reference_path(reference, return_to: references_path), class: "btn btn-sm", data: { toggle: 'tooltip', placement: 'top' }, title: t('actions.edit') do %>
+      <i class="fa fa-pencil-alt fa-fw" aria-hidden="true"></i>
+    <% end %>
+
+    <%= link_to reference_path(reference), method: :delete, class: "btn btn-sm", data: { confirm: t("actions.confirm"), toggle: 'tooltip', placement: 'top', disable_with: t('actions.deleting.short') }, title: t('actions.delete') do %>
+      <i class="fa fa-times fa-lg fa-fw" aria-hidden="true"></i>
+    <% end %>
+  </td>
+</tr>

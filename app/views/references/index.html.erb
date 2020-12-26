@@ -1,13 +1,13 @@
 <br>
-<h1 class="mt-4"><%= t("notes.title") %></h1>
+<h1 class="mt-4"><%= t("references.title") %></h1>
 
 <ol class="breadcrumb mb-4 hidden-print">
-  <li class="breadcrumb-item active"><%= t('notes.nav') %></li>
+  <li class="breadcrumb-item active"><%= t('references.nav') %></li>
 </ol>
 
-<%= render partial: 'notes/index', locals: {
-    return_to: notes_path,
-    notes_scope_meta: @notes_scope_meta,
-    notes: @notes
+<%= render partial: 'references/index', locals: {
+    return_to: references_path,
+    references_scope_meta: @references_scope_meta,
+    references: @references
 } %>
 

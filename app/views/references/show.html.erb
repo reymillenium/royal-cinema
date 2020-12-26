@@ -1,20 +1,20 @@
 <br>
-<h1 class="mt-4"><%= t("notes.details.header") %></h1>
+<h1 class="mt-4"><%= t("references.details.header") %></h1>
 
 <ol class="breadcrumb mb-4 hidden-print">
   <li>
-    <%= link_to notes_path do %>
-      <%= t('notes.nav') %>
+    <%= link_to references_path do %>
+      <%= t('references.nav') %>
     <% end %>
   </li> &nbsp;/&nbsp;
-  <li class="active"> <%= t('notes.details.header') %></li>
+  <li class="active"> <%= t('references.details.header') %></li>
 </ol>
 
 <div class="card mb-4">
   <div class="card-header">
-    <%= link_to edit_note_path(@note, return_to: note_path(@note)), class: "btn btn-success btn-sm", data: { toggle: 'tooltip', placement: 'top' }, title: t('actions.edit') do %>
+    <%= link_to edit_reference_path(@reference, return_to: reference_path(@reference)), class: "btn btn-success btn-sm", data: { toggle: 'tooltip', placement: 'top' }, title: t('actions.edit') do %>
       <i class="fa fa-pencil-alt fa-fw" aria-hidden="true"></i>
-      Edit Note
+      Edit Reference
     <% end %>
   </div>
 
@@ -25,7 +25,7 @@
         Title:
       </label>
       <div class="form-control" style="height: 50px; vertical-align: middle !important; padding-top: 12px;">
-        <%= if_applicable @note.title, titleize: false %>
+        <%= if_applicable @reference.title, titleize: false %>
       </div>
     </div>
 
@@ -38,7 +38,7 @@
         Body:
       </label>
       <div class="form-control-static">
-        <%= @note.body %>
+        <%= @reference.body %>
       </div>
     </div>
 
