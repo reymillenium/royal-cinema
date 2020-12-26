@@ -59,6 +59,7 @@ ActiveRecord::Schema.define(version: 2020_12_26_045123) do
     t.string "full_name"
     t.string "current_job_title"
     t.string "linkedin_profile"
+    t.string "email"
     t.string "mobile_number"
     t.datetime "pertinent_date"
     t.datetime "created_at", precision: 6, null: false
