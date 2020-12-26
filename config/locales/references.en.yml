@@ -1,0 +1,50 @@
+en:
+  references:
+    title: 'References'
+    nav: 'References'
+    short: 'References'
+    validation:
+      invalid: 'invalid'
+    report:
+      tab: 'References Report'
+      nav: 'References Report'
+      title: 'References Report'
+    export:
+      to_csv: 'Export to CSV'
+    responses:
+      clone:
+        success: "The %{resource} has been successfully cloned"
+        error: "The %{resource} can't be cloned}"
+      exporting_action:
+        success: 'The Report of %{resource} has been successfully exported to the csv file: "%{file_name}"'
+        error: "It was not possible to export to a csv file the Report of %{resource}"
+    column_header_labels:
+      title: "Name"
+      body: "Body"
+      created_at: "Created At"
+      updated_at: "Updated At"
+    new:
+      header: 'New Reference'
+      button_title: 'New'
+    create:
+      header: 'Create Reference'
+      success_notice: "Reference was successfully created."
+    update:
+      header: 'Edit Reference'
+      success_notice: "Reference was successfully updated."
+    details:
+      header: 'Reference Details'
+    edit:
+      header: "Edit Reference"
+    destroy:
+      success_notice: "The Reference was successfully destroyed."
+    clone:
+      success_notice: "The Reference with the title: '%{resource}' was successfully cloned."
+    send:
+      success_notice: "The Reference was sent successfully."
+    download_contact:
+      errors:
+        wrong_password: "The Reference by the name of '%{resource}' has the wrong password."
+
+    form:
+

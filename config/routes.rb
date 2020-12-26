@@ -28,6 +28,7 @@ Rails.application.routes.draw do
 
   resources :contacts
   resources :skills
+  resources :references
 
   # The extra_pages view (extra)
   get 'pages', to: 'pages#index'
