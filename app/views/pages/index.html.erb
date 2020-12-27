@@ -35,66 +35,11 @@
 <!-- //projects -->
 
 <!-- references -->
-<%= render partial: "references", locals: { references: references} %>
+<%= render partial: "references", locals: { references: references } %>
 <!-- //references -->
 
 <!-- samples -->
-<div class="portfolio" id="samples">
-  <div class="container">
-    <h3 class="w3l-title">&nbsp;&nbsp;&nbsp;Samples&nbsp;&nbsp;&nbsp;</h3>
-    <div class="agileits_portfolio_grids">
-      <div class="col-md-3 agileits_portfolio_grid">
-        <div class="agileinfo_portfolio_grid hovereffect">
-          <%= link_to "https://sharp-notes.herokuapp.com/", class: "sharpnotes", target: '_sharpnotes' do %>
-            <img src=<%= "#{asset_path 'my_projects/03_SharpNotes/01_login.png'}" %> class="img-responsive" alt=" " style="width: 255px; height: 170px;">
-            <div class="overlay">
-              <h4>SharpNotes</h4>
-              <p>Sample RoR Website</p>
-            </div>
-          <% end %>
-        </div>
-      </div>
-
-      <div class="col-md-3 agileits_portfolio_grid">
-        <div class="agileinfo_portfolio_grid hovereffect">
-          <%= link_to 'https://salon-havana.herokuapp.com/', class: "salonhavana", target: '_salonhavana' do %>
-            <img src=<%= "#{asset_path 'my_projects/04_SalonHavana/01.png'}" %> class="img-responsive" alt=" " style="width: 255px; height: 170px;">
-            <div class="overlay">
-              <h4>Salon Havana</h4>
-              <p>Sample RoR Website</p>
-            </div>
-          <% end %>
-        </div>
-      </div>
-
-      <div class="col-md-3 agileits_portfolio_grid">
-        <div class="agileinfo_portfolio_grid hovereffect">
-          <%= link_to "https://buenasnuevas.herokuapp.com/", class: "buenasnuevas", target: '_buenasnuevas' do %>
-            <img src=<%= "#{asset_path 'my_projects/08_BuenasNuevas/01.png'}" %> class="img-responsive" alt=" " style="width: 255px; height: 170px;">
-            <div class="overlay">
-              <h4>Church BuenasNuevas</h4>
-              <p>Sample Laravel Website</p>
-            </div>
-          <% end %>
-        </div>
-      </div>
-
-      <div class="col-md-3 agileits_portfolio_grid">
-        <div class="agileinfo_portfolio_grid hovereffect">
-          <%= link_to "https://udemy-reactjs-burger-builder.herokuapp.com/", class: "burgerbuilder", target: '_burgerbuilder' do %>
-            <img src=<%= "#{asset_path 'my_projects/13_BurgerBuilder/01.png'}" %> class="img-responsive" alt=" " style="width: 255px; height: 170px;">
-            <div class="overlay">
-              <h4>Burger Builder</h4>
-              <p>Sample React.js App</p>
-            </div>
-          <% end %>
-        </div>
-      </div>
-
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</div>
+<%= render partial: "samples" %>
 <!-- //samples -->
 
 <!-- introduce -->
