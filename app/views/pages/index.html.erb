@@ -1,5 +1,4 @@
 <%
-  contact_model = Contact
   contact = local_assigns.fetch(:contact, Contact.new)
   return_to = local_assigns.fetch(:return_to, request.fullpath)
   skills = @skills
@@ -62,66 +61,8 @@
 <!-- //introduce -->
 
 <!-- //contact -->
-<div class="address" id="contact">
-  <div class="container">
-    <h3 class="w3l-title">&nbsp;Contact Me&nbsp;</h3>
-    <div class="address-row">
-      <div class="col-md-6 address-left wow agile fadeInLeft animated" data-wow-delay=".5s">
-        <div class="address-grid">
-          <h4 class="wow fadeIndown animated" data-wow-delay=".5s">Get In Touch</h4>
-          <%= form_with(model: contact, local: true) do |form| %>
-            <%= hidden_field_tag :return_to, return_to %>
-
-            <%= form.text_field :name, placeholder: 'Name', autofocus: false %>
-            <%= form.email_field :email, placeholder: 'Email', autofocus: false %>
-            <%= form.text_field :subject, placeholder: 'Subject', autofocus: false %>
-            <%= form.text_area :message, placeholder: 'Message', autofocus: false, disabled: false %>
-
-            <div class="row">
-              <div class="col-md-4">
-                <div style="margin-top: 14px;">
-                  <%= recaptcha_tags %>
-                </div>
-              </div>
-              <div class="col-md-3">
-
-              </div>
-
-              <div class="col-md-4 submit-button">
-                <%= form.submit "SEND", name: "send" %>
-              </div>
-            </div>
-          <% end %>
-
-        </div>
-      </div>
-
-      <div class="col-md-6 address-right">
-        <div class="address-info wow fadeInRight animated" data-wow-delay=".5s">
-          <h4>Location</h4>
-          <p>Miami, FL 33135, United States.</p>
-          <p style="color: #F68415; font-size: 0.8em;">
-            Open to working remotely or in the five closest cities: Miami, Coral Gables, Hialeah, Miami Beach or Doral.
-          </p>
-        </div>
-
-        <div class="address-info address-mdl wow fadeInRight animated" data-wow-delay=".7s">
-          <h4>Phone </h4>
-          <p>+1 (786) 458-2150</p>
-          <p>Please let me know before, via email, the day & time of your call, as well as your calling phone
-            number.
-          </p>
-          <p style="color: #F68415; font-size: 0.8em;">
-            * I don't receive unknown or unexpected phone calls & messages.
-          </p>
-        </div>
-
-        <div class="address-info agileits-info wow fadeInRight animated" da ta-wow-delay=".6s">
-          <h4>Mail</h4>
-          <p><a href="mailto:reymillenium@gmail.com"> reymillenium@gmail.com</a></p>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+<%= render partial: "contact", locals: {
+  contact: contact,
+  return_to: return_to
+} %>
 <!--//contact-->
