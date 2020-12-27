@@ -35,63 +35,7 @@
 <!-- //projects -->
 
 <!-- references -->
-<div class="experience" id="references">
-  <div class="container">
-    <h3 class="w3l-title">&nbsp;&nbsp;&nbsp;References&nbsp;&nbsp;</h3>
-    <div class="col-md-12 abt-left">
-      <div class="accordion">
-
-        <% references.each do |reference| %>
-          <div class="accordion-section">
-            <h5>
-              <a class="accordion-section-title" href="#accordion-references-<%= reference.id.to_s %>">
-                <span><%= reference.pertinent_date.strftime(I18n.t('date.formats.long')) %></span>
-                <div style="display: inline; margin-left: <%= (17 - reference.pertinent_date.strftime(I18n.t('date.formats.long')).to_s.size) * 10 %>px"><%= reference.full_name %></div>
-                <i class="glyphicon glyphicon-chevron-down"></i>
-              </a>
-            </h5>
-            <div id="accordion-references-<%= reference.id.to_s %>" class="accordion-section-content">
-              <h6><%= reference.current_job_title %></h6>
-              <ul>
-                <% if reference.linkedin_profile.present? %>
-                  <li>
-                    <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-                    <%= link_to "#{reference.linkedin_profile}", class: "#{reference.full_name.delete(' ').delete('.')}_linkedin", target: "_#{reference.full_name.delete(' ').delete('.')}_linkedin" do %>
-                      <strong>Linkedin Profile: </strong><%= reference.linkedin_profile %>
-                    <% end %>
-                  </li>
-                <% end %>
-
-                <% if reference.email.present? %>
-                  <li>
-                    <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-                    <%= mail_to "#{reference.email}", class: "#{reference.full_name.delete(' ').delete('.')}_email", target: "_#{reference.full_name.delete(' ').delete('.')}_email" do %>
-                      <strong>Email: </strong><%= reference.email %>
-                    <% end %>
-                  </li>
-                <% end %>
-
-                <% if reference.mobile_number.present? %>
-                  <li>
-                    <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-                    <strong>Mobile: </strong><%= reference.mobile_number %>
-                  </li>
-                <% end %>
-              </ul>
-
-              <br>
-
-              <div style="text-indent: 0 !important; text-align: justify;">
-                <%= reference.letter %>
-              </div>
-            </div>
-          </div>
-        <% end %>
-
-      </div>
-    </div>
-  </div>
-</div>
+<%= render partial: "references", locals: { references: references} %>
 <!-- //references -->
 
 <!-- samples -->
