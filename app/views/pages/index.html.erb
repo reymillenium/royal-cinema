@@ -2,37 +2,20 @@
   contact_model = Contact
   contact = local_assigns.fetch(:contact, Contact.new)
   return_to = local_assigns.fetch(:return_to, request.fullpath)
-  skills_all = Skill.all.order(percentage: :desc)
-  references_all = Reference.all.order(pertinent_date: :desc)
+  skills = Skill.all.order(percentage: :desc)
+  references = Reference.all.order(pertinent_date: :desc)
 %>
 
 <!-- about -->
 <%= render partial: "about" %>
 <!-- //about -->
 
-<!-- stats -->
-<div class="stats wthree-sub" id="skills">
-  <div class="container">
-    <h3 class="w3l-title">&nbsp;My Skills</h3>
-
-    <% skills_all.each_slice(3) do |skills_slice| %>
-      <div class="row">
-        <% skills_slice.each do |skill| %>
-          <div class="col-sm-4 stats_grid_right">
-            <div class="skillbar" data-percent="<%= skill.percentage %>">
-              <span class="skillbar-title" style="background: <%= skill.color %>;"><small><%= "#{skill.name.gsub(" ", "&nbsp;")}".html_safe %></small></span>
-              <p class="skillbar-bar" style="background: <%= skill.color %>;"></p>
-              <span class="skill-bar-percent"></span>
-            </div>
-          </div>
-        <% end %>
-      </div>
-    <% end %>
-
-    <div class="clearfix"></div>
-  </div>
-</div>
-<!-- //stats -->
+<!-- skills -->
+<%= render partial: "skills", locals: {
+  skills: skills
+}
+%>
+<!-- //skills -->
 
 <!-- services -->
 <div class="services" id="services">
@@ -672,7 +655,7 @@
     <div class="col-md-12 abt-left">
       <div class="accordion">
 
-        <% references_all.each do |reference| %>
+        <% references.each do |reference| %>
           <div class="accordion-section">
             <h5>
               <a class="accordion-section-title" href="#accordion-references-<%= reference.id.to_s %>">
