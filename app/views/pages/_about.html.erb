@@ -1,0 +1,50 @@
+<!-- about -->
+<div class="about" id="about">
+  <div class="container">
+    <h3 class="w3l-title">&nbsp;My Self&nbsp;</h3>
+    <div class="about-w3l-agileifo-grid">
+      <div class="col-md-7 agile-w3l-ab">
+        <ul class="rslides" id="slider">
+          <li>
+            <div class="agile-w3l-ab-img">
+              <img src=<%= "#{asset_path 'a1.jpg'}" %> class="img-responsive" alt="Homey Designs">
+            </div>
+          </li>
+          <li>
+            <div class="agile-w3l-ab-img">
+              <img src=<%= "#{asset_path 'a2.jpg'}" %> class="img-responsive" alt="Homey Designs">
+            </div>
+          </li>
+          <li>
+            <div class="agile-w3l-ab-img">
+              <img src=<%= "#{asset_path 'a3.jpg'}" %> class="img-responsive" alt="Homey Designs">
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="col-md-5 w3ls-agile-left">
+        <div class="w3ls-agile-left-info">
+          <h4>Name</h4>
+          <p>Reinier Garcia</p>
+        </div>
+        <div class="w3ls-agile-left-info">
+          <h4>Profession</h4>
+          <p>Mid level Full-stack Ruby on Rails Developer</p>
+        </div>
+        <div class="w3ls-agile-left-info">
+          <h4>Experience</h4>
+          <p><%= descriptive_diff(Time.now, "2019-01-02".to_time) %> (in the United States)</p>
+        </div>
+        <div class="w3ls-agile-left-info">
+          <h4>Location</h4>
+          <p> Miami, FL 33135, United States</p>
+        </div>
+        <div class="w3ls-agile-left-info">
+          <h4>Email Address</h4>
+          <p><a href="mailto:reymillenium@gmail.com">reymillenium@gmail.com</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- //about -->
