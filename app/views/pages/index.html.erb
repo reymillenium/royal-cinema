@@ -2,8 +2,8 @@
   contact_model = Contact
   contact = local_assigns.fetch(:contact, Contact.new)
   return_to = local_assigns.fetch(:return_to, request.fullpath)
-  skills = Skill.all.order(percentage: :desc)
-  references = Reference.all.order(pertinent_date: :desc)
+  skills = @skills
+  references = @references
 %>
 
 <!-- about -->
