@@ -23,7 +23,7 @@ module PagesHelper
   end
 
   def descriptive_diff(date1, date2)
-    distance_of_time_in_words(date1, date2, true, only: %i[years months days])
+    distance_of_time_in_words(date1, date2, false, only: %i[years months weeks])
   end
 
 end
