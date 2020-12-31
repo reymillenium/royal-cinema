@@ -15,8 +15,8 @@
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 #
 # This allows to preload the Env variables on test environment, before running them
-require 'dotenv'
-Dotenv.load('.env')
+# require 'dotenv'
+# Dotenv.load('.env')
 
 RSpec.configure do |config|
   # rspec-expectations config goes here. You can use an alternate
