@@ -36,13 +36,20 @@ gem 'bootsnap', '>= 1.4.2', require: false
 gem 'ransack'
 gem 'obscenity'
 
-
-
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'pry'
+  gem 'rspec-core'
+  gem 'rspec-expectations'
+  gem 'rspec-mocks'
+  gem 'rspec-rails'
+  gem 'rspec-support'
+  gem 'faker'
+  gem 'factory_bot_rails'
+  gem 'shoulda-matchers'
 end
+
 gem 'figaro'
 gem "recaptcha"
 
