@@ -1319,7 +1319,7 @@ a.accordion-section-title span {
 	display: none;
 	text-decoration: none;
 	position: fixed;
-	bottom: 24px;
+	bottom: 30px;
 	right: 1%;
 	overflow: hidden;
 	z-index: 999; 
