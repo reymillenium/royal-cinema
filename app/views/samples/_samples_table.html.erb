@@ -1,0 +1,48 @@
+<%
+  return_to = local_assigns.fetch(:return_to, request.fullpath)
+  samples = local_assigns.fetch(:samples, [])
+  samples_scope_meta ||= nil
+  sample_model = Sample
+%>
+
+<div class="card-body">
+  <div class="table-responsive">
+    <table class="table table-bordered table-striped" id="dataTable" width="100%" cellspacing="0">
+      <thead>
+      <tr>
+        <th>
+          <%= sort_link(samples_scope_meta, :title, { default_order: :asc }) %>
+        </th>
+
+        <th>
+          <%= sort_link(samples_scope_meta, :sub_title, { default_order: :asc }) %>
+        </th>
+
+        <th>
+          <%= sort_link(samples_scope_meta, :url, { default_order: :asc }) %>
+        </th>
+
+        <th>
+          <%= sort_link(samples_scope_meta, :created_at, { default_order: :asc }) %>
+        </th>
+
+        <th colspan="2"></th>
+      </tr>
+      </thead>
+
+      <tbody>
+      <% if samples.present? %>
+        <%= render partial: "samples/sample_row", collection: samples, as: :sample, locals: { return_to: return_to } %>
+      <% else %>
+        <tr>
+          <td colspan="6" class="text-center">
+            <i class="fa fa-info-circle"></i>
+            <i><%= t('errors.resources.not_found', resource: humanize_model(sample_model, pluralize: true, titleize: false)) %></i>
+          </td>
+        </tr>
+      <% end %>
+      </tbody>
+
+    </table>
+  </div>
+</div>

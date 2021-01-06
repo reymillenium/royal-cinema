@@ -1,0 +1,48 @@
+<%
+  return_to = local_assigns.fetch(:return_to, request.fullpath)
+  sample = local_assigns.fetch(:sample)
+%>
+
+<tr>
+  <td>
+    <div class="nowrap">
+      <%= link_to sample.title, sample_path(sample) %>
+    </div>
+  </td>
+
+  <td>
+    <div class="nowrap">
+      <%= sample.sub_title %>
+    </div>
+  </td>
+
+  <td>
+    <div class="nowrap">
+      <%= sample.url %>
+    </div>
+  </td>
+
+  <td>
+    <div class="nowrap">
+      <%= if_applicable(sample.created_at.present? ? l(sample.created_at) : nil, titleize: false) %>
+    </div>
+  </td>
+
+  <td class="nowrap">
+    <%#= link_to download_sample_as_word_sample_path(sample), class: "btn btn-sm", download: sample.title, data: { toggle: 'tooltip', placement: 'top' }, title: t('actions.download') do %>
+<!--      <i class="fa fa-download fa-fw" aria-hidden="true"></i>-->
+    <%# end %>
+
+    <%#= link_to clone_sample_path(sample), class: "btn btn-sm", data: { toggle: 'tooltip', placement: 'top' }, title: t('actions.clone') do %>
+<!--      <i class="fa fa-clone fa-fw" aria-hidden="true"></i>-->
+    <%# end %>
+
+    <%= link_to edit_sample_path(sample, return_to: samples_path), class: "btn btn-sm", data: { toggle: 'tooltip', placement: 'top' }, title: t('actions.edit') do %>
+      <i class="fa fa-pencil-alt fa-fw" aria-hidden="true"></i>
+    <% end %>
+
+    <%= link_to sample_path(sample), method: :delete, class: "btn btn-sm", data: { confirm: t("actions.confirm"), toggle: 'tooltip', placement: 'top', disable_with: t('actions.deleting.short') }, title: t('actions.delete') do %>
+      <i class="fa fa-times fa-lg fa-fw" aria-hidden="true"></i>
+    <% end %>
+  </td>
+</tr>

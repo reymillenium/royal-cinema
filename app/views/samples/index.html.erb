@@ -1,0 +1,13 @@
+<br>
+<h1 class="mt-4"><%= t("samples.title") %></h1>
+
+<ol class="breadcrumb mb-4 hidden-print">
+  <li class="breadcrumb-item active"><%= t('samples.nav') %></li>
+</ol>
+
+<%= render partial: 'samples/index', locals: {
+    return_to: samples_path,
+    samples_scope_meta: @samples_scope_meta,
+    samples: @samples
+} %>
+

@@ -1,0 +1,23 @@
+<%
+  return_to ||= local_assigns.fetch(:return_to, request.fullpath)
+  samples_scope_meta ||= nil
+  samples ||= nil
+%>
+
+<div class="card mb-4">
+  <%= render partial: "samples/index_toolbar", locals: {
+      return_to: return_to,
+      samples_scope_meta: samples_scope_meta,
+      search_criteria: :title_or_sub_title_or_url_cont,
+      search_url: samples_path,
+      show_actions: false
+  } %>
+
+  <%= render partial: "samples/samples_table", locals: {
+      return_to: return_to,
+      samples_scope_meta: samples_scope_meta,
+      samples: samples
+  } %>
+
+  <%= render partial: "samples/index_bottombar" %>
+</div>
