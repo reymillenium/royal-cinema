@@ -37,7 +37,7 @@
 
           <%= form.file_field :image, class: 'form-control py-4' %>
           <% if sample.image.attached? %>
-            <% image_tag sample, style: "width: 200px; display: block;" %>
+            <%= image_tag sample.image, style: "width: 200px; display: block;" %>
           <% end %>
 
           <%#= form.text_field :pertinent_date, class: 'form-control py-4', autofocus: true, autocomplete: "pertinent_date", placeholder: 'Enter the pertinent date', data: { behavior: "flatpickr" } %>

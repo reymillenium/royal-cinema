@@ -62,7 +62,18 @@
         </div>
       </div>
 
+      <div class="col-md-6">
+        <div class="form-group">
+          <label class="small mb-1">
+            Image:
+          </label>
+          <% if @sample.image.attached? %>
+            <%= image_tag @sample.image, style: "width: 200px; display: block;" %>
+          <% end %>
 
+          <%#= form.text_field :pertinent_date, class: 'form-control py-4', autofocus: true, autocomplete: "pertinent_date", placeholder: 'Enter the pertinent date', data: { behavior: "flatpickr" } %>
+        </div>
+      </div>
     </div>
 
     <!-- Separation Row: Makes this partial more similar to the edit/new form  -->
