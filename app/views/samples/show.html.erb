@@ -14,7 +14,7 @@
   <div class="card-header">
     <%= link_to sample_path(@sample), method: :delete, class: "btn btn-danger btn-sm", data: { confirm: t("actions.confirm"), toggle: 'tooltip', placement: 'top', disable_with: t('actions.deleting.short') }, title: t('actions.delete') do %>
       <i class="fa fa-times fa-fw" aria-hidden="true"></i>
-      Delete Reference
+      Delete Sample
     <% end %>
 
     <%= link_to edit_sample_path(@sample, return_to: sample_path(@sample)), class: "btn btn-success btn-sm", data: { toggle: 'tooltip', placement: 'top' }, title: t('actions.edit') do %>
@@ -70,8 +70,6 @@
           <% if @sample.image.attached? %>
             <%= image_tag @sample.image, style: "width: 200px; display: block;" %>
           <% end %>
-
-          <%#= form.text_field :pertinent_date, class: 'form-control py-4', autofocus: true, autocomplete: "pertinent_date", placeholder: 'Enter the pertinent date', data: { behavior: "flatpickr" } %>
         </div>
       </div>
     </div>
