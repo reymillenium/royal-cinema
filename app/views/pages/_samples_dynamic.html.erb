@@ -1,0 +1,33 @@
+<%
+  samples = local_assigns.fetch(:samples)
+%>
+
+<!-- samples -->
+<div class="portfolio" id="samples">
+  <div class="container">
+    <h3 class="w3l-title">&nbsp;&nbsp;&nbsp;Samples&nbsp;&nbsp;&nbsp;</h3>
+    <div class="agileits_portfolio_grids">
+
+      <% samples.each_slice(4) do |samples_slice| %>
+        <div class="row">
+          <% samples_slice.each do |sample| %>
+            <div class="col-md-3 agileits_portfolio_grid">
+              <div class="agileinfo_portfolio_grid hovereffect">
+                <%= link_to "#{sample.url}", class: "#{sample.title.delete(' ').delete('.')}_url", target: "_#{sample.title.delete(' ').delete('.')}_url" do %>
+                  <%= image_tag sample.image, class: "img-responsive", alt: ' ', style: "width: 255px; height: 170px;" %>
+                  <div class="overlay">
+                    <h4><%= sample.title %></h4>
+                    <p><%= sample.sub_title %></p>
+                  </div>
+                <% end %>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
+
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</div>
+<!-- //samples -->
