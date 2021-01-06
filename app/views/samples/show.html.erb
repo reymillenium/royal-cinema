@@ -67,6 +67,10 @@
           <label class="small mb-1">
             Image:
           </label>
+          <div class="form-control" style="height: 50px; vertical-align: middle !important; padding-top: 12px;">
+            <%= if_applicable @sample.image.filename, titleize: false %>
+          </div>
+          <br>
           <% if @sample.image.attached? %>
             <%= image_tag @sample.image, style: "width: 200px; display: block;" %>
           <% end %>

@@ -47,4 +47,6 @@ en:
         wrong_password: "The Sample by the name of '%{resource}' has the wrong password."
 
     form:
+      image_format: 'Supported file types: .PNG, .JPG, .JPEG & .GIF'
+
 
