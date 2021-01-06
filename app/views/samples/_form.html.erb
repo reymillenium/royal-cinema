@@ -35,8 +35,8 @@
           <%= form.label :image, humanize_attribute(sample_model, :image), class: 'small mb-1' %>
           <%= form.file_field :image, class: 'form-control f-image-preview-input', style: 'height: 50px;' %>
           <% if sample.image.attached? %>
+            <%= image_tag sample.image, class: 'image-prev-settings', style: "width: 200px; display: block;" %>
           <% end %>
-          <%= image_tag sample.image, class: 'image-prev-settings', style: "width: 200px; display: block;" %>
         </div>
       </div>
     </div>
