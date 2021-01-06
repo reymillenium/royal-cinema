@@ -1,0 +1,50 @@
+en:
+  samples:
+    title: 'Samples'
+    nav: 'Samples'
+    short: 'Samples'
+    validation:
+      invalid: 'invalid'
+    report:
+      tab: 'Samples Report'
+      nav: 'Samples Report'
+      title: 'Samples Report'
+    export:
+      to_csv: 'Export to CSV'
+    responses:
+      clone:
+        success: "The %{resource} has been successfully cloned"
+        error: "The %{resource} can't be cloned}"
+      exporting_action:
+        success: 'The Report of %{resource} has been successfully exported to the csv file: "%{file_name}"'
+        error: "It was not possible to export to a csv file the Report of %{resource}"
+    column_header_labels:
+      title: "Name"
+      body: "Body"
+      created_at: "Created At"
+      updated_at: "Updated At"
+    new:
+      header: 'New Sample'
+      button_title: 'New'
+    create:
+      header: 'Create Sample'
+      success_notice: "Sample was successfully created."
+    update:
+      header: 'Edit Sample'
+      success_notice: "Sample was successfully updated."
+    details:
+      header: 'Sample Details'
+    edit:
+      header: "Edit Sample"
+    destroy:
+      success_notice: "The Sample was successfully destroyed."
+    clone:
+      success_notice: "The Sample with the title: '%{resource}' was successfully cloned."
+    send:
+      success_notice: "The Sample was sent successfully."
+    download_contact:
+      errors:
+        wrong_password: "The Sample by the name of '%{resource}' has the wrong password."
+
+    form:
+
