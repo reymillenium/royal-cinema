@@ -11,14 +11,14 @@
     <div class="form-row">
       <div class="col-md-6">
         <div class="form-group">
-          <%= form.label :full_name, humanize_attribute(sample_model, :full_name), class: 'small mb-1' %>
-          <%= form.text_field :full_name, class: 'form-control py-4', autofocus: true, autocomplete: "full_name", placeholder: 'Enter the full name' %>
+          <%= form.label :title, humanize_attribute(sample_model, :full_name), class: 'small mb-1' %>
+          <%= form.text_field :title, class: 'form-control py-4', autofocus: true, autocomplete: "title", placeholder: 'Enter the title' %>
         </div>
       </div>
       <div class="col-md-6">
         <div class="form-group">
-          <%= form.label :current_job_title, humanize_attribute(sample_model, :current_job_title), class: 'small mb-1' %>
-          <%= form.text_field :current_job_title, class: 'form-control py-4', autofocus: true, autocomplete: "current_job_title", placeholder: 'Enter the current job title' %>
+          <%= form.label :sub_title, humanize_attribute(sample_model, :sub_title), class: 'small mb-1' %>
+          <%= form.text_field :sub_title, class: 'form-control py-4', autofocus: true, autocomplete: "sub_title", placeholder: 'Enter the sub title' %>
         </div>
       </div>
     </div>
@@ -26,37 +26,25 @@
     <div class="form-row">
       <div class="col-md-6">
         <div class="form-group">
-          <%= form.label :linkedin_profile, humanize_attribute(sample_model, :linkedin_profile), class: 'small mb-1' %>
-          <%= form.text_field :linkedin_profile, class: 'form-control py-4', autofocus: true, autocomplete: "linkedin_profile", placeholder: 'Enter the Linkedin url' %>
+          <%= form.label :url, humanize_attribute(sample_model, :url), class: 'small mb-1' %>
+          <%= form.text_field :url, class: 'form-control py-4', autofocus: true, autocomplete: "url", placeholder: 'Enter the url' %>
         </div>
       </div>
+
       <div class="col-md-6">
         <div class="form-group">
-          <%= form.label :mobile_number, humanize_attribute(sample_model, :mobile_number), class: 'small mb-1' %>
-          <%= form.text_field :mobile_number, class: 'form-control py-4', autofocus: true, autocomplete: "mobile_number", placeholder: 'Enter the mobile number' %>
+          <%= form.label :image, humanize_attribute(sample_model, :image), class: 'small mb-1' %>
+
+          <%= form.file_field :image, class: 'form-control py-4' %>
+          <% if sample.image.attached? %>
+            <% image_tag sample, style: "width: 200px; display: block;" %>
+          <% end %>
+
+          <%#= form.text_field :pertinent_date, class: 'form-control py-4', autofocus: true, autocomplete: "pertinent_date", placeholder: 'Enter the pertinent date', data: { behavior: "flatpickr" } %>
         </div>
       </div>
     </div>
 
-    <div class="form-row">
-      <div class="col-md-6">
-        <div class="form-group">
-          <%= form.label :pertinent_date, humanize_attribute(sample_model, :pertinent_date), class: 'small mb-1' %>
-          <%= form.text_field :pertinent_date, class: 'form-control py-4', autofocus: true, autocomplete: "pertinent_date", placeholder: 'Enter the pertinent date', data: { behavior: "flatpickr" } %>
-        </div>
-      </div>
-      <div class="col-md-6">
-        <div class="form-group">
-          <%= form.label :email, humanize_attribute(sample_model, :email), class: 'small mb-1' %>
-          <%= form.text_field :email, class: 'form-control py-4', autofocus: true, autocomplete: "email", placeholder: 'Enter the email' %>
-        </div>
-      </div>
-    </div>
-
-    <div class="form-group">
-      <%= form.label :letter, humanize_attribute(sample_model, :letter), class: "small mb-1" %>
-      <%= form.rich_text_area :letter, class: "form-control py-4", autofocus: true, autocomplete: "letter", placeholder: 'Enter the letter of your sample', disabled: false %>
-    </div>
 
     <div class="form-group d-flex align-items-center justify-content-between mt-4 mb-0">
       <div class="actions">

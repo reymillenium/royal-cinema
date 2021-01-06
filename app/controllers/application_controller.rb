@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
 
   layout :layout_by_resource
 
-  ADMIN_RESOURCES = %w[contacts skills references]
+  ADMIN_RESOURCES = %w[contacts skills references samples]
 
   protect_from_forgery
   # before_action :authenticate_user!
