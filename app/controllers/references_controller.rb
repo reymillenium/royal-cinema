@@ -29,7 +29,7 @@ class ReferencesController < ApplicationController
       redirect_to @return_to, notice: redirect_notice
     else
       flash[:alert] = @reference.errors.full_messages.first
-      redirect_to @return_to
+      render :new
     end
   end
 
@@ -41,7 +41,7 @@ class ReferencesController < ApplicationController
       redirect_to @return_to, notice: redirect_notice
     else
       flash[:alert] = @reference.errors.full_messages.first
-      redirect_to @return_to
+      render action: :edit
     end
   end
 
