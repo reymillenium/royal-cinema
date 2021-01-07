@@ -1,7 +1,7 @@
 <%
   return_to = local_assigns.fetch(:return_to, request.fullpath)
   contact = local_assigns.fetch(:contact)
-  body_truncate_length = 160
+  body_truncate_length = 80
   body_text = contact.message
   class_by_validity = contact.email_blacklisted? ? 'bg-warning' : ''
 %>
