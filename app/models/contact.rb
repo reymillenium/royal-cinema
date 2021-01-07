@@ -14,4 +14,8 @@ class Contact < ApplicationRecord
   validates :message, presence: true
   validates :message, obscenity: true
 
+  private
+
+
+
 end

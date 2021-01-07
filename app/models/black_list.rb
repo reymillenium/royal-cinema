@@ -1,0 +1,4 @@
+class BlackList < ApplicationRecord
+
+
+end
