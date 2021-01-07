@@ -2,7 +2,7 @@ class ContactsController < ApplicationController
   include CommonControl
 
   before_action :authenticate_user!, only: %i[index show destroy]
-  before_action :set_contact, only: %i[show destroy]
+  before_action :set_contact, only: %i[show destroy block_contact unblock_contact]
   before_action :update_concerned_path, only: [:create]
 
   def index
@@ -40,6 +40,16 @@ class ContactsController < ApplicationController
       format.html { redirect_to contacts_url, notice: t('contacts.destroy.success_notice') }
       format.json { head :no_content }
     end
+  end
+
+  def block_contact
+    contact_service.block_contact(@contact)
+    redirect_to contacts_url, notice: t('contacts.block.success_notice')
+  end
+
+  def unblock_contact
+    contact_service.unblock_contact(@contact)
+    redirect_to contacts_url, notice: t('contacts.unblock.success_notice')
   end
 
   private

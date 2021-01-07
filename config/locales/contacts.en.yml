@@ -53,6 +53,9 @@ en:
     assign: 'Assign'
     unassign: 'Unassign'
     download: 'Download'
+    block: 'Block'
+    unblock: 'Unblock'
+    ban: 'Ban'
     clone: 'Clone'
     enroll: 'Enroll'
     enroll_selected: 'Enroll Selected'
@@ -106,6 +109,12 @@ en:
     deleting:
       short: '...'
       long: 'Deleting...'
+    blocking:
+      short: '...'
+      long: 'Blocking...'
+    unblocking:
+      short: '...'
+      long: 'Unblocking...'
     completing:
       short: '...'
       long: 'Completing...'
@@ -216,6 +225,10 @@ en:
       success_notice: "The Message was successfully destroyed."
     clone:
       success_notice: "The Message with the title: '%{resource}' was successfully cloned."
+    block:
+      success_notice: "The Message was successfully blocked."
+    unblock:
+      success_notice: "The Message was successfully unblocked."
     send:
       success_notice: "The Message was sent successfully."
     download_contact:

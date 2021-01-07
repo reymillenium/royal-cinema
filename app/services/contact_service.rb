@@ -26,6 +26,16 @@ class ContactService
     response
   end
 
+  def self.block_contact(contact)
+    black_list = BlackList.new(value: contact.email, black_list_type: 'email')
+    black_list.save!
+  end
+
+  def self.unblock_contact(contact)
+    black_list = BlackList.find_by_black_list_type_and_value("email", contact.email)
+    black_list.destroy
+  end
+
   # Cleans parameters not applicable to contact attributes
   def self.clean_parameters(params, blacklist = PARAMS_BLACK_LIST)
     params.reject do |param_key, _|

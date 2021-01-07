@@ -48,7 +48,7 @@ ActiveRecord::Schema.define(version: 2021_01_07_174653) do
 
   create_table "black_lists", force: :cascade do |t|
     t.string "value"
-    t.string "type"
+    t.string "black_list_type"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

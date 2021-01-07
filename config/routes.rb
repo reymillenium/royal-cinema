@@ -26,7 +26,10 @@ Rails.application.routes.draw do
     put 'users' => 'users/registrations#update', :as => 'user_registration'
   end
 
-  resources :contacts
+  resources :contacts do
+    get :block_contact, on: :member
+    get :unblock_contact, on: :member
+  end
   resources :skills
   resources :references
   resources :samples
