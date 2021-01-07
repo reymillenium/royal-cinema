@@ -52,6 +52,7 @@ end
 
 gem 'figaro'
 gem "recaptcha"
+gem "aws-sdk-s3", require: false
 
 gem 'lightbox2-rails'
 gem 'listen', '~> 3.2'
