@@ -1,6 +1,10 @@
 <%
   return_to = local_assigns.fetch(:return_to, request.fullpath)
   reference = local_assigns.fetch(:reference)
+
+  current_job_title_truncate_length = 24
+  linkedin_profile_truncate_length = 24
+  email_truncate_length = 24
 %>
 
 <tr>
@@ -12,13 +16,13 @@
 
   <td>
     <div class="nowrap">
-      <%= reference.current_job_title %>
+      <%= truncate(reference.current_job_title, length: current_job_title_truncate_length) %>
     </div>
   </td>
 
   <td>
     <div class="nowrap">
-      <%= reference.linkedin_profile %>
+      <%= truncate(reference.linkedin_profile, length: linkedin_profile_truncate_length) %>
     </div>
   </td>
 
@@ -30,7 +34,7 @@
 
   <td>
     <div class="nowrap">
-      <%= reference.email %>
+      <%= truncate(reference.email, length: email_truncate_length) %>
     </div>
   </td>
 
@@ -48,11 +52,11 @@
 
   <td class="nowrap">
     <%#= link_to download_reference_as_word_reference_path(reference), class: "btn btn-sm", download: reference.title, data: { toggle: 'tooltip', placement: 'top' }, title: t('actions.download') do %>
-<!--      <i class="fa fa-download fa-fw" aria-hidden="true"></i>-->
+    <!--      <i class="fa fa-download fa-fw" aria-hidden="true"></i>-->
     <%# end %>
 
     <%#= link_to clone_reference_path(reference), class: "btn btn-sm", data: { toggle: 'tooltip', placement: 'top' }, title: t('actions.clone') do %>
-<!--      <i class="fa fa-clone fa-fw" aria-hidden="true"></i>-->
+    <!--      <i class="fa fa-clone fa-fw" aria-hidden="true"></i>-->
     <%# end %>
 
     <%= link_to edit_reference_path(reference, return_to: references_path), class: "btn btn-sm", data: { toggle: 'tooltip', placement: 'top' }, title: t('actions.edit') do %>
