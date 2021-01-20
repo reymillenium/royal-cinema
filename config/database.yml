@@ -17,16 +17,16 @@ default: &default
 development:
   <<: *default
   # To use it directly from
-  database: reiniergarcia_website_development
+  database: royal_cinema_development
 
 test:
   <<: *default
   # To use it directly from
-  database: reiniergarcia_website_test
+  database: royal_cinema_test
   min_messages: WARNING
 
 production:
 #  <<: *default
   # To use it directly from
-  database: reiniergarcia_website_production
+  database: royal_cinema_production
   port: 5432
