@@ -4,8 +4,8 @@ class AvailableSeat < ApplicationRecord
   # Callbacks:
 
   # Relations:
-  belongs_to :seat, class_name: Seat.name, inverse_of: :AvailableSeat
-  belongs_to :order, class_name: Order.name, inverse_of: :AvailableSeat
+  belongs_to :show_time, class_name: ShowTime.name, inverse_of: :available_seats
+  belongs_to :order, class_name: Order.name, inverse_of: :available_seats
 
   # Nested attributes:
 
