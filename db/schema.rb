@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_21_064447) do
+ActiveRecord::Schema.define(version: 2021_01_21_075652) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -75,6 +75,17 @@ ActiveRecord::Schema.define(version: 2021_01_21_064447) do
     t.float "price_per_seat"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "orders", force: :cascade do |t|
+    t.bigint "show_time_id"
+    t.string "name"
+    t.string "email"
+    t.integer "credit_card_number"
+    t.date "expiration_date"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["show_time_id"], name: "index_orders_on_show_time_id"
   end
 
   create_table "references", force: :cascade do |t|
@@ -143,6 +154,7 @@ ActiveRecord::Schema.define(version: 2021_01_21_064447) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "orders", "show_times"
   add_foreign_key "seats", "auditoriums"
   add_foreign_key "show_times", "auditoriums"
   add_foreign_key "show_times", "movies"
