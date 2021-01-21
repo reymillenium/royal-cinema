@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_21_075652) do
+ActiveRecord::Schema.define(version: 2021_01_21_082733) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -107,6 +107,19 @@ ActiveRecord::Schema.define(version: 2021_01_21_075652) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "seat_purchases", force: :cascade do |t|
+    t.bigint "seat_id"
+    t.bigint "order_id"
+    t.string "row_letter"
+    t.string "column_number"
+    t.float "base_value"
+    t.boolean "was_used"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["order_id"], name: "index_seat_purchases_on_order_id"
+    t.index ["seat_id"], name: "index_seat_purchases_on_seat_id"
+  end
+
   create_table "seats", force: :cascade do |t|
     t.bigint "auditorium_id"
     t.string "row_letter"
@@ -155,6 +168,8 @@ ActiveRecord::Schema.define(version: 2021_01_21_075652) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "orders", "show_times"
+  add_foreign_key "seat_purchases", "orders"
+  add_foreign_key "seat_purchases", "seats"
   add_foreign_key "seats", "auditoriums"
   add_foreign_key "show_times", "auditoriums"
   add_foreign_key "show_times", "movies"

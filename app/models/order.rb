@@ -6,8 +6,7 @@ class Order < ApplicationRecord
 
   # Relations:
   belongs_to :show_time, class_name: ShowTime.name, inverse_of: :orders
-
-  # has_many :seat_purchases, class_name: SeatPurchase.name, inverse_of: :order, foreign_key: :order_id
+  has_many :seat_purchases, class_name: SeatPurchase.name, inverse_of: :order, foreign_key: :order_id, dependent: :destroy
 
   # Nested attributes:
 
