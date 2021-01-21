@@ -6,6 +6,9 @@ class CreateOrders < ActiveRecord::Migration[6.0]
       t.string :email
       t.integer :credit_card_number
       t.date :expiration_date
+      t.float :added_price
+      t.float :taxes
+      t.float :total_price
 
       t.timestamps
     end

@@ -83,6 +83,9 @@ ActiveRecord::Schema.define(version: 2021_01_21_082733) do
     t.string "email"
     t.integer "credit_card_number"
     t.date "expiration_date"
+    t.float "added_price"
+    t.float "taxes"
+    t.float "total_price"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["show_time_id"], name: "index_orders_on_show_time_id"
@@ -112,7 +115,7 @@ ActiveRecord::Schema.define(version: 2021_01_21_082733) do
     t.bigint "order_id"
     t.string "row_letter"
     t.string "column_number"
-    t.float "base_value"
+    t.float "base_price"
     t.boolean "was_used"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -124,7 +127,7 @@ ActiveRecord::Schema.define(version: 2021_01_21_082733) do
     t.bigint "auditorium_id"
     t.string "row_letter"
     t.string "column_number"
-    t.float "base_value"
+    t.float "base_price"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["auditorium_id"], name: "index_seats_on_auditorium_id"
