@@ -52,6 +52,19 @@ ActiveRecord::Schema.define(version: 2021_01_21_082733) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "available_seats", force: :cascade do |t|
+    t.bigint "show_time_id"
+    t.bigint "order_id"
+    t.string "row_letter"
+    t.string "column_number"
+    t.float "base_price"
+    t.boolean "was_used"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["order_id"], name: "index_available_seats_on_order_id"
+    t.index ["show_time_id"], name: "index_available_seats_on_show_time_id"
+  end
+
   create_table "black_lists", force: :cascade do |t|
     t.string "value"
     t.string "black_list_type"
@@ -110,19 +123,6 @@ ActiveRecord::Schema.define(version: 2021_01_21_082733) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "seat_purchases", force: :cascade do |t|
-    t.bigint "seat_id"
-    t.bigint "order_id"
-    t.string "row_letter"
-    t.string "column_number"
-    t.float "base_price"
-    t.boolean "was_used"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["order_id"], name: "index_seat_purchases_on_order_id"
-    t.index ["seat_id"], name: "index_seat_purchases_on_seat_id"
-  end
-
   create_table "seats", force: :cascade do |t|
     t.bigint "auditorium_id"
     t.string "row_letter"
@@ -170,9 +170,9 @@ ActiveRecord::Schema.define(version: 2021_01_21_082733) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "available_seats", "orders"
+  add_foreign_key "available_seats", "show_times"
   add_foreign_key "orders", "show_times"
-  add_foreign_key "seat_purchases", "orders"
-  add_foreign_key "seat_purchases", "seats"
   add_foreign_key "seats", "auditoriums"
   add_foreign_key "show_times", "auditoriums"
   add_foreign_key "show_times", "movies"

@@ -1,7 +1,7 @@
-class CreateSeatPurchases < ActiveRecord::Migration[6.0]
+class CreateAvailableSeats < ActiveRecord::Migration[6.0]
   def change
-    create_table :seat_purchases do |t|
-      t.references :seat, foreign_key: { to_table: :seats }, index: true
+    create_table :available_seats do |t|
+      t.references :show_time, foreign_key: { to_table: :show_times }, index: true
       t.references :order, foreign_key: { to_table: :orders }, index: true
       t.string :row_letter
       t.string :column_number

@@ -7,6 +7,7 @@ class ShowTime < ApplicationRecord
   belongs_to :auditorium, class_name: Auditorium.name, inverse_of: :show_times
   belongs_to :movie, class_name: Movie.name, inverse_of: :show_times
   has_many :orders, class_name: Order.name, inverse_of: :show_time, foreign_key: :show_time_id, dependent: :destroy
+  has_many :available_seats, class_name: AvailableSeat.name, inverse_of: :show_time, foreign_key: :show_time_id, dependent: :destroy
 
   # Nested attributes:
 

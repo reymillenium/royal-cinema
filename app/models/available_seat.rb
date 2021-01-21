@@ -1,11 +1,11 @@
-class SeatPurchase < ApplicationRecord
+class AvailableSeat < ApplicationRecord
   # Constants:
 
   # Callbacks:
 
   # Relations:
-  belongs_to :seat, class_name: Seat.name, inverse_of: :seat_purchases
-  belongs_to :order, class_name: Order.name, inverse_of: :seat_purchases
+  belongs_to :seat, class_name: Seat.name, inverse_of: :AvailableSeat
+  belongs_to :order, class_name: Order.name, inverse_of: :AvailableSeat
 
   # Nested attributes:
 

@@ -1,5 +1,5 @@
 FactoryBot.define do
-  factory :seat_purchase do
+  factory :available_seat do
     
   end
 end
