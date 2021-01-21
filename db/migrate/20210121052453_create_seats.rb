@@ -4,7 +4,7 @@ class CreateSeats < ActiveRecord::Migration[6.0]
       t.references :auditorium, foreign_key: { to_table: :auditoriums }, index: true
       t.string :row_letter
       t.string :column_number
-      t.integer :base_value
+      t.float :base_value
 
       t.timestamps
     end
