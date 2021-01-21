@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_21_052453) do
+ActiveRecord::Schema.define(version: 2021_01_21_064447) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -97,6 +97,17 @@ ActiveRecord::Schema.define(version: 2021_01_21_052453) do
     t.index ["auditorium_id"], name: "index_seats_on_auditorium_id"
   end
 
+  create_table "show_times", force: :cascade do |t|
+    t.bigint "auditorium_id"
+    t.datetime "begin_time"
+    t.datetime "end_time"
+    t.string "movie_title"
+    t.string "movie_genre"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["auditorium_id"], name: "index_show_times_on_auditorium_id"
+  end
+
   create_table "skills", force: :cascade do |t|
     t.string "name"
     t.string "color"
@@ -121,4 +132,5 @@ ActiveRecord::Schema.define(version: 2021_01_21_052453) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "seats", "auditoriums"
+  add_foreign_key "show_times", "auditoriums"
 end
