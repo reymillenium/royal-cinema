@@ -1,0 +1,87 @@
+<br>
+<h1 class="mt-4"><%= t("auditoriums.details.header") %></h1>
+
+<ol class="breadcrumb mb-4 hidden-print">
+  <li>
+    <%= link_to auditoriums_path do %>
+      <%= t('auditoriums.nav') %>
+    <% end %>
+  </li> &nbsp;/&nbsp;
+  <li class="active"> <%= t('auditoriums.details.header') %></li>
+</ol>
+
+<div class="card mb-4">
+  <div class="card-header">
+    <%= link_to auditorium_path(@auditorium), method: :delete, class: "btn btn-danger btn-sm", data: { confirm: t("actions.confirm"), toggle: 'tooltip', placement: 'top', disable_with: t('actions.deleting.short') }, title: t('actions.delete') do %>
+      <i class="fa fa-times fa-fw" aria-hidden="true"></i>
+      Delete Sample
+    <% end %>
+
+    <%= link_to edit_auditorium_path(@auditorium, return_to: auditorium_path(@auditorium)), class: "btn btn-success btn-sm", data: { toggle: 'tooltip', placement: 'top' }, title: t('actions.edit') do %>
+      <i class="fa fa-pencil-alt fa-fw" aria-hidden="true"></i>
+      Edit Sample
+    <% end %>
+  </div>
+
+  <div class="card-body">
+    <!-- Details Row # 1:  -->
+    <div class="form-row">
+      <div class="col-md-6">
+        <div class="form-group">
+          <label class="small mb-1">
+            Title:
+          </label>
+          <div class="form-control" style="height: 50px; vertical-align: middle !important; padding-top: 12px;">
+            <%= if_applicable @auditorium.title, titleize: false %>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="form-group">
+          <label class="small mb-1">
+            Sub title:
+          </label>
+          <div class="form-control" style="height: 50px; vertical-align: middle !important; padding-top: 12px;">
+            <%= if_applicable @auditorium.sub_title, titleize: false %>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Details Row # 2:  -->
+    <div class="form-row">
+      <div class="col-md-6">
+        <div class="form-group">
+          <label class="small mb-1">
+            Url:
+          </label>
+          <div class="form-control" style="height: 50px; vertical-align: middle !important; padding-top: 12px;">
+            <%= if_applicable @auditorium.url, titleize: false %>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="form-group">
+          <label class="small mb-1">
+            Image:
+          </label>
+          <div class="form-control" style="height: 50px; vertical-align: middle !important; padding-top: 12px;">
+            <%= if_applicable @auditorium.image.filename, titleize: false %>
+          </div>
+          <br>
+          <% if @auditorium.image.attached? %>
+            <%= image_tag @auditorium.image, style: "width: 200px; display: block;" %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+
+    <!-- Separation Row: Makes this partial more similar to the edit/new form  -->
+    <div class="form-group"></div>
+
+    <!-- Separation Row: Makes this partial more similar to the edit/new form  -->
+    <div class="form-group"></div>
+  </div>
+</div>

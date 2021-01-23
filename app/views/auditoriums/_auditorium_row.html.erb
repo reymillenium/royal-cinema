@@ -1,0 +1,48 @@
+<%
+  return_to = local_assigns.fetch(:return_to, request.fullpath)
+  auditorium = local_assigns.fetch(:auditorium)
+%>
+
+<tr>
+  <td>
+    <div class="nowrap">
+      <%= link_to auditorium.title, auditorium_path(auditorium) %>
+    </div>
+  </td>
+
+  <td>
+    <div class="nowrap">
+      <%= auditorium.sub_title %>
+    </div>
+  </td>
+
+  <td>
+    <div class="nowrap">
+      <%= auditorium.url %>
+    </div>
+  </td>
+
+  <td>
+    <div class="nowrap">
+      <%= if_applicable(auditorium.created_at.present? ? l(auditorium.created_at) : nil, titleize: false) %>
+    </div>
+  </td>
+
+  <td class="nowrap">
+    <%#= link_to download_auditorium_as_word_auditorium_path(auditorium), class: "btn btn-sm", download: auditorium.title, data: { toggle: 'tooltip', placement: 'top' }, title: t('actions.download') do %>
+<!--      <i class="fa fa-download fa-fw" aria-hidden="true"></i>-->
+    <%# end %>
+
+    <%#= link_to clone_auditorium_path(auditorium), class: "btn btn-sm", data: { toggle: 'tooltip', placement: 'top' }, title: t('actions.clone') do %>
+<!--      <i class="fa fa-clone fa-fw" aria-hidden="true"></i>-->
+    <%# end %>
+
+    <%= link_to edit_auditorium_path(auditorium, return_to: auditoriums_path), class: "btn btn-sm", data: { toggle: 'tooltip', placement: 'top' }, title: t('actions.edit') do %>
+      <i class="fa fa-pencil-alt fa-fw" aria-hidden="true"></i>
+    <% end %>
+
+    <%= link_to auditorium_path(auditorium), method: :delete, class: "btn btn-sm", data: { confirm: t("actions.confirm"), toggle: 'tooltip', placement: 'top', disable_with: t('actions.deleting.short') }, title: t('actions.delete') do %>
+      <i class="fa fa-times fa-lg fa-fw" aria-hidden="true"></i>
+    <% end %>
+  </td>
+</tr>

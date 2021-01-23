@@ -1,0 +1,103 @@
+<%
+  auditorium_model = Auditorium
+  auditorium = local_assigns.fetch(:auditorium, Auditorium.new)
+  return_to = local_assigns.fetch(:return_to, request.fullpath)
+
+  # binding.pry
+%>
+
+<div class="card-body">
+  <%= form_with(model: auditorium, local: true) do |form| %>
+    <%= hidden_field_tag :return_to, return_to %>
+
+    <div class="form-row">
+      <div class="col-md-6">
+        <div class="form-group">
+          <%= form.label :title, humanize_attribute(auditorium_model, :title), class: 'small mb-1' %>
+          <%= form.text_field :title, class: 'form-control py-4', autofocus: true, autocomplete: "title", placeholder: 'Enter the title' %>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <%= form.label :sub_title, humanize_attribute(auditorium_model, :sub_title), class: 'small mb-1' %>
+          <%= form.text_field :sub_title, class: 'form-control py-4', autofocus: true, autocomplete: "sub_title", placeholder: 'Enter the sub title' %>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="col-md-6">
+        <div class="form-group">
+          <%= form.label :url, humanize_attribute(auditorium_model, :url), class: 'small mb-1' %>
+          <%= form.text_field :url, class: 'form-control py-4', autofocus: true, autocomplete: "url", placeholder: 'Enter the url' %>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <%= form.label :image, humanize_attribute(auditorium_model, :image), class: 'small mb-1' %>
+          <small style="font-size: x-small;">(<%= t('auditoriums.form.image_format') %>)</small>
+          <%= form.file_field :image, class: 'form-control f-image-preview-input', style: 'height: 50px;', accept: 'image/png, image/jpg, image/jpeg, image/gif' %>
+          <br>
+          <% if auditorium.image.attached? %>
+            <%= image_tag auditorium.image, class: 'image-prev-settings', style: "width: 200px; display: block;" %>
+          <% end %>
+          <%= image_tag '', class: 'image-prev-settings', style: "width: 200px; display: block;" %>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group d-flex align-items-center justify-content-between mt-4 mb-0">
+      <div class="actions">
+        <%= form.submit (auditorium.persisted? ? t('actions.save') : t('actions.create_and_continue')), name: "save", class: "btn btn-primary btn-sm", data: { disable_with: (auditorium.persisted? ? t('actions.saving.long') : t('actions.creating.long')) } %>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+<style type="text/css">
+    input[type=file] {
+        width: 100%;
+        height: 100%;
+        cursor: pointer;
+        vertical-align: middle;
+        padding-top: 9px;
+    }
+</style>
+
+<script type="text/javascript" charset="utf-8">
+    $(document).ready(function () {
+        // $('input[type="file"]').attr('title', window.webkitURL ? ' ' : '');
+
+        // alert('dd');
+
+        // $('#button').click(function(){
+        //     $("input[type='file']").trigger('click');
+        // })
+        //
+        // $("input[type='file']").change(function(){
+        //     $('#val').text(this.value.replace(/C:\\fakepath\\/i, ''))
+        // })
+
+
+        $(document).on('change', '.f-image-preview-input', function () {
+            var row = $(this).parents('.col-md-6')
+            // $(row[0].querySelector('.text-danger')).hide();
+
+            var preview = row[0].querySelector('.image-prev-settings');
+            var file = row[0].querySelector('.f-image-preview-input').files[0];
+            var reader = new FileReader();
+
+            reader.onloadend = function () {
+                preview.src = reader.result;
+            }
+
+            if (file) {
+                reader.readAsDataURL(file);
+            } else {
+                preview.src = "";
+            }
+        });
+
+    });
+
+</script>

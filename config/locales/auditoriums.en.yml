@@ -1,0 +1,52 @@
+en:
+  auditoriums:
+    title: 'Auditoriums'
+    nav: 'Auditoriums'
+    short: 'Auditoriums'
+    validation:
+      invalid: 'invalid'
+    report:
+      tab: 'Auditoriums Report'
+      nav: 'Auditoriums Report'
+      title: 'Auditoriums Report'
+    export:
+      to_csv: 'Export to CSV'
+    responses:
+      clone:
+        success: "The %{resource} has been successfully cloned"
+        error: "The %{resource} can't be cloned}"
+      exporting_action:
+        success: 'The Report of %{resource} has been successfully exported to the csv file: "%{file_name}"'
+        error: "It was not possible to export to a csv file the Report of %{resource}"
+    column_header_labels:
+      title: "Name"
+      body: "Body"
+      created_at: "Created At"
+      updated_at: "Updated At"
+    new:
+      header: 'New Auditorium'
+      button_title: 'New'
+    create:
+      header: 'Create Auditorium'
+      success_notice: "Auditorium was successfully created."
+    update:
+      header: 'Edit Auditorium'
+      success_notice: "Auditorium was successfully updated."
+    details:
+      header: 'Auditorium Details'
+    edit:
+      header: "Edit Auditorium"
+    destroy:
+      success_notice: "The Auditorium was successfully destroyed."
+    clone:
+      success_notice: "The Auditorium with the title: '%{resource}' was successfully cloned."
+    send:
+      success_notice: "The Auditorium was sent successfully."
+    download_contact:
+      errors:
+        wrong_password: "The Auditorium by the name of '%{resource}' has the wrong password."
+
+    form:
+      image_format: 'Supported file types: .PNG, .JPG, .JPEG & .GIF'
+
+

@@ -1,0 +1,23 @@
+<%
+  return_to ||= local_assigns.fetch(:return_to, request.fullpath)
+  auditoriums_scope_meta ||= nil
+  auditoriums ||= nil
+%>
+
+<div class="card mb-4">
+  <%= render partial: "auditoriums/index_toolbar", locals: {
+      return_to: return_to,
+      auditoriums_scope_meta: auditoriums_scope_meta,
+      search_criteria: :title_or_sub_title_or_url_cont,
+      search_url: auditoriums_path,
+      show_actions: false
+  } %>
+
+  <%= render partial: "auditoriums/auditoriums_table", locals: {
+      return_to: return_to,
+      auditoriums_scope_meta: auditoriums_scope_meta,
+      auditoriums: auditoriums
+  } %>
+
+  <%= render partial: "auditoriums/index_bottombar" %>
+</div>

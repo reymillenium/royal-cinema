@@ -1,0 +1,13 @@
+<br>
+<h1 class="mt-4"><%= t("auditoriums.title") %></h1>
+
+<ol class="breadcrumb mb-4 hidden-print">
+  <li class="breadcrumb-item active"><%= t('auditoriums.nav') %></li>
+</ol>
+
+<%= render partial: 'auditoriums/index', locals: {
+    return_to: auditoriums_path,
+    auditoriums_scope_meta: @auditoriums_scope_meta,
+    auditoriums: @auditoriums
+} %>
+
