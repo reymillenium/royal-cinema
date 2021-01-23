@@ -1,5 +1,6 @@
 class Auditorium < ApplicationRecord
-
+  # Fixing issue due to wrong pluralization of the framework of the word auditorium (the table 'auditoria' was initially assigned)
+  # self.table_name = "auditoriums"
 
   # Constants:
 

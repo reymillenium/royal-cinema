@@ -13,38 +13,38 @@
     <div class="form-row">
       <div class="col-md-6">
         <div class="form-group">
-          <%= form.label :title, humanize_attribute(auditorium_model, :title), class: 'small mb-1' %>
-          <%= form.text_field :title, class: 'form-control py-4', autofocus: true, autocomplete: "title", placeholder: 'Enter the title' %>
+          <%= form.label :name, humanize_attribute(auditorium_model, :name), class: 'small mb-1' %>
+          <%= form.text_field :name, class: 'form-control py-4', autofocus: true, autocomplete: "title", placeholder: 'Enter the name' %>
         </div>
       </div>
-      <div class="col-md-6">
-        <div class="form-group">
-          <%= form.label :sub_title, humanize_attribute(auditorium_model, :sub_title), class: 'small mb-1' %>
-          <%= form.text_field :sub_title, class: 'form-control py-4', autofocus: true, autocomplete: "sub_title", placeholder: 'Enter the sub title' %>
-        </div>
-      </div>
+<!--      <div class="col-md-6">-->
+<!--        <div class="form-group">-->
+          <%#= form.label :sub_title, humanize_attribute(auditorium_model, :sub_title), class: 'small mb-1' %>
+          <%#= form.text_field :sub_title, class: 'form-control py-4', autofocus: true, autocomplete: "sub_title", placeholder: 'Enter the sub title' %>
+<!--        </div>-->
+<!--      </div>-->
     </div>
 
-    <div class="form-row">
-      <div class="col-md-6">
-        <div class="form-group">
-          <%= form.label :url, humanize_attribute(auditorium_model, :url), class: 'small mb-1' %>
-          <%= form.text_field :url, class: 'form-control py-4', autofocus: true, autocomplete: "url", placeholder: 'Enter the url' %>
-        </div>
-      </div>
-      <div class="col-md-6">
-        <div class="form-group">
-          <%= form.label :image, humanize_attribute(auditorium_model, :image), class: 'small mb-1' %>
-          <small style="font-size: x-small;">(<%= t('auditoriums.form.image_format') %>)</small>
-          <%= form.file_field :image, class: 'form-control f-image-preview-input', style: 'height: 50px;', accept: 'image/png, image/jpg, image/jpeg, image/gif' %>
-          <br>
-          <% if auditorium.image.attached? %>
-            <%= image_tag auditorium.image, class: 'image-prev-settings', style: "width: 200px; display: block;" %>
-          <% end %>
-          <%= image_tag '', class: 'image-prev-settings', style: "width: 200px; display: block;" %>
-        </div>
-      </div>
-    </div>
+<!--    <div class="form-row">-->
+<!--      <div class="col-md-6">-->
+<!--        <div class="form-group">-->
+          <%#= form.label :url, humanize_attribute(auditorium_model, :url), class: 'small mb-1' %>
+          <%#= form.text_field :url, class: 'form-control py-4', autofocus: true, autocomplete: "url", placeholder: 'Enter the url' %>
+<!--        </div>-->
+<!--      </div>-->
+<!--      <div class="col-md-6">-->
+<!--        <div class="form-group">-->
+          <%#= form.label :image, humanize_attribute(auditorium_model, :image), class: 'small mb-1' %>
+<!--          <small style="font-size: x-small;">(<%#= t('auditoriums.form.image_format') %>)</small>-->
+          <%#= form.file_field :image, class: 'form-control f-image-preview-input', style: 'height: 50px;', accept: 'image/png, image/jpg, image/jpeg, image/gif' %>
+<!--          <br>-->
+          <%# if auditorium.image.attached? %>
+            <%#= image_tag auditorium.image, class: 'image-prev-settings', style: "width: 200px; display: block;" %>
+          <%# end %>
+          <%#= image_tag '', class: 'image-prev-settings', style: "width: 200px; display: block;" %>
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
 
     <div class="form-group d-flex align-items-center justify-content-between mt-4 mb-0">
       <div class="actions">

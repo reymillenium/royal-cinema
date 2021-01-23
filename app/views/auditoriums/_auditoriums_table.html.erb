@@ -11,16 +11,16 @@
       <thead>
       <tr>
         <th>
-          <%= sort_link(auditoriums_scope_meta, :title, { default_order: :asc }) %>
+          <%= sort_link(auditoriums_scope_meta, :name, { default_order: :asc }) %>
         </th>
 
-        <th>
-          <%= sort_link(auditoriums_scope_meta, :sub_title, { default_order: :asc }) %>
-        </th>
+<!--        <th>-->
+          <%#= sort_link(auditoriums_scope_meta, :sub_title, { default_order: :asc }) %>
+<!--        </th>-->
 
-        <th>
-          <%= sort_link(auditoriums_scope_meta, :url, { default_order: :asc }) %>
-        </th>
+<!--        <th>-->
+          <%#= sort_link(auditoriums_scope_meta, :url, { default_order: :asc }) %>
+<!--        </th>-->
 
         <th>
           <%= sort_link(auditoriums_scope_meta, :created_at, { default_order: :asc }) %>
@@ -35,7 +35,7 @@
         <%= render partial: "auditoriums/auditorium_row", collection: auditoriums, as: :auditorium, locals: { return_to: return_to } %>
       <% else %>
         <tr>
-          <td colspan="6" class="text-center">
+          <td colspan="4" class="text-center">
             <i class="fa fa-info-circle"></i>
             <i><%= t('errors.resources.not_found', resource: humanize_model(auditorium_model, pluralize: true, titleize: false)) %></i>
           </td>

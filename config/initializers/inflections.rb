@@ -14,3 +14,8 @@
 # ActiveSupport::Inflector.inflections(:en) do |inflect|
 #   inflect.acronym 'RESTful'
 # end
+
+# Fixing issue due to wrong pluralization of the framework of the word auditorium (the table 'auditoria' was initially assigned)
+ActiveSupport::Inflector.inflections(:en) do |inflect|
+  inflect.irregular 'auditorium', 'auditoriums'
+end
