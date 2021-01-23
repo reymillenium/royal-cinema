@@ -34,6 +34,9 @@ Rails.application.routes.draw do
   resources :references
   resources :samples
 
+  # Royal Ciinema
+  resources :auditoriums
+
   # The extra_pages view (extra)
   get 'pages', to: 'pages#index'
 
