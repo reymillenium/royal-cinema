@@ -27,7 +27,8 @@ class AuditoriumsController < ApplicationController
 
     if @auditorium.save
       redirect_notice = t('auditoriums.create.success_notice')
-      redirect_to @return_to, notice: redirect_notice
+      # redirect_to @return_to, notice: redirect_notice
+      redirect_to edit_auditorium_path(@auditorium, return_to: @return_to), notice: redirect_notice
     else
       flash[:alert] = @auditorium.errors.full_messages.first
       render :new

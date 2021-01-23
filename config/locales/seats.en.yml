@@ -1,0 +1,52 @@
+en:
+  seats:
+    title: 'Seats'
+    nav: 'Seats'
+    short: 'Seats'
+    validation:
+      invalid: 'invalid'
+    report:
+      tab: 'Seats Report'
+      nav: 'Seats Report'
+      title: 'Seats Report'
+    export:
+      to_csv: 'Export to CSV'
+    responses:
+      clone:
+        success: "The %{resource} has been successfully cloned"
+        error: "The %{resource} can't be cloned}"
+      exporting_action:
+        success: 'The Report of %{resource} has been successfully exported to the csv file: "%{file_name}"'
+        error: "It was not possible to export to a csv file the Report of %{resource}"
+    column_header_labels:
+      title: "Name"
+      body: "Body"
+      created_at: "Created At"
+      updated_at: "Updated At"
+    new:
+      header: 'New Seat'
+      button_title: 'New'
+    create:
+      header: 'Create Seat'
+      success_notice: "Seat was successfully created."
+    update:
+      header: 'Edit Seat'
+      success_notice: "Seat was successfully updated."
+    details:
+      header: 'Seat Details'
+    edit:
+      header: "Edit Seat"
+    destroy:
+      success_notice: "The Seat was successfully destroyed."
+    clone:
+      success_notice: "The Seat with the title: '%{resource}' was successfully cloned."
+    send:
+      success_notice: "The Seat was sent successfully."
+    download_contact:
+      errors:
+        wrong_password: "The Seat by the name of '%{resource}' has the wrong password."
+
+    form:
+      image_format: 'Supported file types: .PNG, .JPG, .JPEG & .GIF'
+
+

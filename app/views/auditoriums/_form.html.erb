@@ -46,6 +46,22 @@
 <!--      </div>-->
 <!--    </div>-->
 
+    <% if auditorium.persisted? %>
+      <% seats = auditorium.seats || [] %>
+
+      <div class="card">
+        <div class="card-header">
+          <h2 class="card-title"><%= t('seats.title') %></h2>
+        </div>
+        <div class="card-body">
+          <div class="form-horizontal" id="seats_container" data-sjr-placeholder>
+            <%#= render partial: 'auditoriums/seats', locals: {f: f, seats_to_assign: locations_to_assign} %>
+            <%= render partial: 'auditoriums/seats' %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+
     <div class="form-group d-flex align-items-center justify-content-between mt-4 mb-0">
       <div class="actions">
         <%= form.submit (auditorium.persisted? ? t('actions.save') : t('actions.create_and_continue')), name: "save", class: "btn btn-primary btn-sm", data: { disable_with: (auditorium.persisted? ? t('actions.saving.long') : t('actions.creating.long')) } %>
